@@ -1,4 +1,6 @@
-# Orynavo website
+# Orynavo
+
+Live site: https://orynavo.com/
 
 A production-ready, static credibility site for Orynavo: an evidence-led umbrella for small, owner-light digital products.
 
@@ -41,4 +43,4 @@ Screenshots are written to the ignored `screenshots/` directory.
 
 ## Deployment
 
-Serve the directory as static files. Configure the host to use `404.html` for not-found routes. Before deployment, update the privacy notice with the chosen hosting provider's relevant processing details. No canonical URL is included because no public domain has been established.
+GitHub Pages serves the `main` branch from the repository root. `orynavo.com` is the canonical domain and `404.html` handles not-found routes.

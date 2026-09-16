@@ -8,7 +8,7 @@ from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).parent.resolve()
-REQUIRED = {"index.html", "privacy.html", "404.html", "README.md", ".gitignore"}
+REQUIRED = {"index.html", "privacy.html", "404.html", "README.md", ".gitignore", "CNAME", "og-image.png"}
 HTML_FILES = [ROOT / name for name in ("index.html", "privacy.html", "404.html")]
 
 
@@ -113,8 +113,10 @@ def main() -> int:
     for phrase in ("no analytics", "cookies", "if contact features are added", "would not be sold"):
         check(phrase in privacy, f"privacy.html: required disclosure present ({phrase})", failures)
 
+    check((ROOT / "CNAME").read_text(encoding="utf-8").strip() == "orynavo.com", "CNAME: canonical domain is orynavo.com", failures)
+    check("https://orynavo.com/" in index, "index.html: canonical Orynavo domain is present", failures)
+    check("https://orynavo.com/privacy.html" in privacy, "privacy.html: canonical Orynavo domain is present", failures)
     for path, text in contents.items():
-        check(not re.search(r"https?://(www\\.)?orynavo", text, re.I), f"{path.name}: no invented Orynavo domain", failures)
         check("mailto:" not in text.lower(), f"{path.name}: no dead mailto link", failures)
 
     print(f"\\nSUMMARY: {len(failures)} failure(s), {sum(1 for _ in [])} warning(s)")
