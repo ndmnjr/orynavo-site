@@ -88,11 +88,14 @@ def main() -> int:
     for source, parser in parsed.items():
         for href in parser.links:
             parts = urlsplit(href)
+            if href.startswith("mailto:"):
+                check(href == "mailto:hello@orynavo.com", f"{source.name}: published contact link is approved ({href})", failures)
+                continue
+            if href.startswith("tel:"):
+                check(False, f"{source.name}: no unpublished telephone link ({href})", failures)
+                continue
             if parts.scheme:
                 check(parts.scheme == "https", f"{source.name}: external link uses HTTPS ({href})", failures)
-                continue
-            if href.startswith(("mailto:", "tel:")):
-                check(False, f"{source.name}: no unpublished contact link ({href})", failures)
                 continue
             local_name = unquote(parts.path) or source.name
             target = (source.parent / local_name).resolve()
@@ -110,14 +113,14 @@ def main() -> int:
         check(phrase in index, f"index.html: required message present ({phrase})", failures)
 
     privacy = contents[ROOT / "privacy.html"].lower()
-    for phrase in ("no analytics", "cookies", "if contact features are added", "would not be sold"):
+    for phrase in ("no analytics", "cookies", "email contact", "it is not sold"):
         check(phrase in privacy, f"privacy.html: required disclosure present ({phrase})", failures)
 
     check((ROOT / "CNAME").read_text(encoding="utf-8").strip() == "orynavo.com", "CNAME: canonical domain is orynavo.com", failures)
     check("https://orynavo.com/" in index, "index.html: canonical Orynavo domain is present", failures)
     check("https://orynavo.com/privacy.html" in privacy, "privacy.html: canonical Orynavo domain is present", failures)
-    for path, text in contents.items():
-        check("mailto:" not in text.lower(), f"{path.name}: no dead mailto link", failures)
+    check("mailto:hello@orynavo.com" in index, "index.html: approved contact mailbox is published", failures)
+    check("mailto:hello@orynavo.com" in privacy, "privacy.html: approved contact mailbox is disclosed", failures)
 
     print(f"\\nSUMMARY: {len(failures)} failure(s), {sum(1 for _ in [])} warning(s)")
     if failures:
