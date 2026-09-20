@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.options import Options
 ROOT = Path(__file__).parent.resolve()
 OUT = ROOT / "screenshots"
 BASE_URL = "http://127.0.0.1:4173/"
-PAGES = (("home", ""), ("privacy", "privacy.html"), ("404", "404.html"))
+PAGES = (("home", ""), ("privacy", "privacy.html"), ("404", "404.html"), ("photonbid", "photonbid/"))
 VIEWPORTS = (("desktop", 1440, 1000), ("mobile-390", 390, 844))
 
 
@@ -23,6 +23,7 @@ def driver_for(width: int, height: int) -> webdriver.Chrome:
     options.add_argument("--force-device-scale-factor=1")
     options.add_argument("--disable-gpu")
     options.add_argument("--no-sandbox")
+    options.set_capability("goog:loggingPrefs", {"browser": "ALL"})
     return webdriver.Chrome(options=options)
 
 
@@ -59,12 +60,19 @@ def main() -> int:
                 )
                 screenshot.write_bytes(base64.b64decode(image["data"]))
                 overflow = scroll_width > client_width
-                ok = actual_width == width and not overflow and bool(h1) and "Orynavo" in title
+                console_errors = [
+                    entry for entry in driver.get_log("browser")
+                    if entry["level"] == "SEVERE"
+                ]
+                ok = actual_width == width and not overflow and bool(h1) and "Orynavo" in title and not console_errors
                 print(
                     f"{'PASS' if ok else 'FAIL'}: {name} "
                     f"viewport={actual_width} clientWidth={client_width} scrollWidth={scroll_width} "
-                    f"height={full_height} overflow={overflow} screenshot={screenshot}"
+                    f"height={full_height} overflow={overflow} consoleErrors={len(console_errors)} "
+                    f"screenshot={screenshot}"
                 )
+                for error in console_errors:
+                    print(f"  CONSOLE: {error['message']}")
                 if not ok:
                     failures.append(name)
             finally:
