@@ -13,8 +13,10 @@ ROOT = Path(__file__).parent.resolve()
 REQUIRED = {
     "index.html", "privacy.html", "404.html", "README.md", ".gitignore",
     "CNAME", "og-image.png", "favicon.ico", "email-signature-logo.png",
+    "photonbid/index.html",
 }
-HTML_FILES = [ROOT / name for name in ("index.html", "privacy.html", "404.html")]
+PUBLIC_HTML = ("index.html", "privacy.html", "404.html", "photonbid/index.html")
+HTML_FILES = [ROOT / name for name in PUBLIC_HTML]
 FAVICON_SIZES = {(16, 16), (32, 32), (48, 48), (64, 64)}
 SIGNATURE_SIZE = (320, 80)
 
@@ -34,6 +36,8 @@ class AuditParser(HTMLParser):
         self.mains = 0
         self.navs = 0
         self.images_missing_alt: list[str] = []
+        self.reader_text: list[str] = []
+        self._hidden_depth = 0
 
     def handle_starttag(self, tag: str, attrs_raw: list[tuple[str, str | None]]) -> None:
         attrs = {k: (v or "") for k, v in attrs_raw}
@@ -60,6 +64,21 @@ class AuditParser(HTMLParser):
             self.navs += 1
         if tag == "img" and "alt" not in attrs:
             self.images_missing_alt.append(attrs.get("src", "(unknown)"))
+        if tag in {"style", "script", "template"}:
+            self._hidden_depth += 1
+        if tag == "meta" and (
+            attrs.get("name", "").lower() == "description"
+            or attrs.get("property", "").lower() in {"og:title", "og:description"}
+        ):
+            self.reader_text.append(attrs.get("content", ""))
+
+    def handle_endtag(self, tag: str) -> None:
+        if tag in {"style", "script", "template"}:
+            self._hidden_depth -= 1
+
+    def handle_data(self, data: str) -> None:
+        if not self._hidden_depth and data.strip():
+            self.reader_text.append(data)
 
 
 def check(condition: bool, message: str, failures: list[str]) -> None:
@@ -141,34 +160,41 @@ def ico_sizes(data: bytes) -> set[tuple[int, int]]:
 
 def main() -> int:
     failures: list[str] = []
-    existing = {p.name for p in ROOT.iterdir() if p.is_file()}
-    check(REQUIRED <= existing, "all required files exist", failures)
+    check(all((ROOT / name).is_file() for name in REQUIRED), "all required files exist", failures)
 
     parsed: dict[Path, AuditParser] = {}
     contents: dict[Path, str] = {}
     for path in HTML_FILES:
+        page_name = path.relative_to(ROOT).as_posix()
         text = path.read_text(encoding="utf-8")
         contents[path] = text
         parser = AuditParser()
         parser.feed(text)
         parsed[path] = parser
-        check(text.lstrip().lower().startswith("<!doctype html>"), f"{path.name}: HTML5 doctype", failures)
-        check(parser.titles == 1, f"{path.name}: exactly one title", failures)
-        check(parser.descriptions == 1, f"{path.name}: meta description", failures)
-        check(parser.og_titles == 1 and parser.og_descriptions == 1, f"{path.name}: Open Graph title and description", failures)
+        check(text.lstrip().lower().startswith("<!doctype html>"), f"{page_name}: HTML5 doctype", failures)
+        check(parser.titles == 1, f"{page_name}: exactly one title", failures)
+        check(parser.descriptions == 1, f"{page_name}: meta description", failures)
+        check(parser.og_titles == 1 and parser.og_descriptions == 1, f"{page_name}: Open Graph title and description", failures)
         expected_favicon = {"rel": "icon", "type": "image/x-icon", "href": "/favicon.ico"}
-        check(parser.favicons == [expected_favicon], f"{path.name}: explicit /favicon.ico reference", failures)
-        check(parser.h1s == 1, f"{path.name}: exactly one h1", failures)
-        check(parser.mains == 1, f"{path.name}: main landmark", failures)
-        check(parser.navs >= 1, f"{path.name}: navigation landmark", failures)
-        check(not parser.images_missing_alt, f"{path.name}: every img has alt text", failures)
-        check("@media(prefers-reduced-motion:reduce)" in text.replace(" ", ""), f"{path.name}: reduced-motion rule", failures)
+        check(parser.favicons == [expected_favicon], f"{page_name}: explicit /favicon.ico reference", failures)
+        check(parser.h1s == 1, f"{page_name}: exactly one h1", failures)
+        check(parser.mains == 1, f"{page_name}: main landmark", failures)
+        if page_name == "photonbid/index.html":
+            check(parser.navs == 0, f"{page_name}: no empty navigation landmark", failures)
+        else:
+            check(parser.navs >= 1, f"{page_name}: navigation landmark", failures)
+        check(not parser.images_missing_alt, f"{page_name}: every img has alt text", failures)
+        check("@media(prefers-reduced-motion:reduce)" in text.replace(" ", ""), f"{page_name}: reduced-motion rule", failures)
+        reader_copy = " ".join(parser.reader_text)
+        for forbidden, label in (("\u2013", "en dash"), ("\u2014", "em dash"), ("--", "double hyphen")):
+            check(forbidden not in reader_copy, f"{page_name}: reader-facing copy has no {label}", failures)
 
     for source, parser in parsed.items():
         for href in parser.links:
             parts = urlsplit(href)
             if href.startswith("mailto:"):
-                check(href == "mailto:hello@orynavo.com", f"{source.name}: published contact link is approved ({href})", failures)
+                approved_mailboxes = {"hello@orynavo.com", "research@orynavo.com"}
+                check(parts.path in approved_mailboxes, f"{source.relative_to(ROOT).as_posix()}: published contact link is approved ({href})", failures)
                 continue
             if href.startswith("tel:"):
                 check(False, f"{source.name}: no unpublished telephone link ({href})", failures)
@@ -176,30 +202,46 @@ def main() -> int:
             if parts.scheme:
                 check(parts.scheme == "https", f"{source.name}: external link uses HTTPS ({href})", failures)
                 continue
-            local_name = unquote(parts.path) or source.name
-            target = (source.parent / local_name).resolve()
+            local_name = unquote(parts.path)
+            if local_name.startswith("/"):
+                target = ROOT / local_name.lstrip("/")
+                if target == ROOT:
+                    target = ROOT / "index.html"
+                target = target.resolve()
+            else:
+                local_name = local_name or source.name
+                target = (source.parent / local_name).resolve()
             check(target.is_file(), f"{source.name}: local link target exists ({href})", failures)
             if target in parsed and parts.fragment:
                 check(parts.fragment in parsed[target].ids, f"{source.name}: fragment target exists ({href})", failures)
 
     index = contents[ROOT / "index.html"].lower()
     required_phrases = [
-        "small digital products around", "real, repeated problems", "observe pain",
-        "test willingness to pay", "build narrowly", "automate operations",
-        "early research", "green-but-useless", "n8n", "no guarantee"
+        "small digital products for", "real, repeated problems", "find a repeated problem",
+        "worth paying to solve", "smallest useful version", "keep operations light",
+        "early research", "successful run", "n8n", "no guarantee"
     ]
     for phrase in required_phrases:
         check(phrase in index, f"index.html: required message present ({phrase})", failures)
 
     privacy = contents[ROOT / "privacy.html"].lower()
-    for phrase in ("no analytics", "cookies", "email contact", "it is not sold"):
+    for phrase in ("no analytics", "cookies", "when you send an email", "it is not sold"):
         check(phrase in privacy, f"privacy.html: required disclosure present ({phrase})", failures)
+
+    photonbid = contents[ROOT / "photonbid/index.html"].lower()
+    for phrase in (
+        "official european tenders", "actual catalogue", "quoted evidence",
+        "possible product match", "disqualifying requirements",
+        "official notice always takes precedence",
+    ):
+        check(phrase in photonbid, f"photonbid/index.html: required message present ({phrase})", failures)
 
     check((ROOT / "CNAME").read_text(encoding="utf-8").strip() == "orynavo.com", "CNAME: canonical domain is orynavo.com", failures)
     check("https://orynavo.com/" in index, "index.html: canonical Orynavo domain is present", failures)
     check("https://orynavo.com/privacy.html" in privacy, "privacy.html: canonical Orynavo domain is present", failures)
     check("mailto:hello@orynavo.com" in index, "index.html: approved contact mailbox is published", failures)
     check("mailto:hello@orynavo.com" in privacy, "privacy.html: approved contact mailbox is disclosed", failures)
+    check("mailto:research@orynavo.com" in privacy, "privacy.html: research contact mailbox is disclosed", failures)
 
     try:
         actual_favicon_sizes = ico_sizes((ROOT / "favicon.ico").read_bytes())
