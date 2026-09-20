@@ -9,9 +9,21 @@ A production-ready, static credibility site for Orynavo: an evidence-led umbrell
 - `index.html` — single-page public site
 - `privacy.html` — plain-language privacy notice
 - `404.html` — custom not-found page
+- `favicon.ico` — multi-size browser icon (16, 32, 48, and 64px)
+- `email-signature-logo.png` — transparent 320×80px logo for 2× email rendering
 - `.gitignore` — local tooling exclusions
 
-All CSS, JavaScript, icons, and open-graph artwork are embedded. There is no build step, dependency, tracking script, or external font request.
+All CSS and JavaScript are embedded. Brand and open-graph artwork is hosted from the site root. There is no build step, dependency, tracking script, or external font request.
+
+## Email signature logo
+
+Use the hosted PNG at `https://orynavo.com/email-signature-logo.png`. It is a 320×80px transparent image designed to display at 160×40px for crisp 2× rendering:
+
+```html
+<img src="https://orynavo.com/email-signature-logo.png" width="160" height="40" alt="Orynavo">
+```
+
+Keep the `alt="Orynavo"` text so the brand remains available when images are blocked or to people using assistive technology. Do not use an empty alt attribute unless the same linked text appears immediately beside the image.
 
 ## Run locally
 
@@ -31,7 +43,7 @@ Run the deterministic checker:
 python verify_site.py
 ```
 
-The checker validates required files, document metadata and landmarks, local links and fragment targets, image alternatives, HTTPS external links, required messages, and reduced-motion CSS.
+The checker validates required files, document metadata and landmarks, local links and fragment targets, image alternatives, HTTPS external links, required messages, reduced-motion CSS, the physical ICO structure and sizes, and the signature PNG dimensions.
 
 With the local server running, use Chrome to check horizontal overflow and capture full-page screenshots at desktop and 390px widths:
 
