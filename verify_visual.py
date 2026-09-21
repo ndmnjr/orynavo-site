@@ -64,12 +64,38 @@ def main() -> int:
                     entry for entry in driver.get_log("browser")
                     if entry["level"] == "SEVERE"
                 ]
-                ok = actual_width == width and not overflow and bool(h1) and "Orynavo" in title and not console_errors
+                video_ok = True
+                video_detail = ""
+                if page_name == "photonbid":
+                    video = driver.find_element("css selector", "video")
+                    video_state = driver.execute_script(
+                        """const v = arguments[0]; return {
+                            paused: v.paused,
+                            autoplay: v.autoplay,
+                            preload: v.preload,
+                            readyState: v.readyState,
+                            duration: v.duration,
+                            tracks: v.textTracks.length,
+                            source: v.currentSrc
+                        };""",
+                        video,
+                    )
+                    video_ok = (
+                        video_state["paused"]
+                        and not video_state["autoplay"]
+                        and video_state["preload"] == "metadata"
+                        and video_state["readyState"] >= 1
+                        and 61 <= video_state["duration"] <= 62
+                        and video_state["tracks"] == 1
+                        and video_state["source"].startswith(BASE_URL)
+                    )
+                    video_detail = f" video={video_state}"
+                ok = actual_width == width and not overflow and bool(h1) and "Orynavo" in title and not console_errors and video_ok
                 print(
                     f"{'PASS' if ok else 'FAIL'}: {name} "
                     f"viewport={actual_width} clientWidth={client_width} scrollWidth={scroll_width} "
                     f"height={full_height} overflow={overflow} consoleErrors={len(console_errors)} "
-                    f"screenshot={screenshot}"
+                    f"screenshot={screenshot}{video_detail}"
                 )
                 for error in console_errors:
                     print(f"  CONSOLE: {error['message']}")

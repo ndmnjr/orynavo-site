@@ -67,17 +67,12 @@
     }
     .wordmark {
       display: flex;
-      align-items: baseline;
-      gap: 10px;
-      font-weight: 700;
-      letter-spacing: -.02em;
+      align-items: center;
     }
-    .wordmark span {
-      color: var(--muted);
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: .12em;
-      text-transform: uppercase;
+    .wordmark img {
+      display: block;
+      width: 188px;
+      height: auto;
     }
     .status {
       display: inline-flex;
@@ -218,6 +213,46 @@
       text-transform: uppercase;
     }
 
+    .video-story {
+      padding-block: 104px 112px;
+      border-top: 1px solid var(--line);
+      background: var(--soft);
+    }
+    .video-intro {
+      display: grid;
+      grid-template-columns: .68fr 1.32fr;
+      gap: clamp(48px, 8vw, 120px);
+      align-items: start;
+      margin-bottom: 46px;
+    }
+    .video-intro h2 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(42px, 5.2vw, 70px);
+      line-height: 1.01;
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+    .video-intro p:last-child {
+      max-width: 690px;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 19px;
+    }
+    .video-shell video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      box-shadow: 13px 13px 0 var(--clay);
+    }
+    .video-note {
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
     .section { border-top: 1px solid var(--line); }
     .section-grid {
       display: grid;
@@ -340,6 +375,7 @@
       .hero { grid-template-columns: 1fr; min-height: auto; gap: 86px; padding-block: 72px 88px; }
       .sample { max-width: 540px; }
       .section-grid, .boundary-grid { grid-template-columns: 1fr; gap: 42px; }
+      .video-intro { grid-template-columns: 1fr; gap: 30px; }
       .section-grid { padding-block: 82px; }
       .boundary-grid { padding-block: 78px; }
       .questions { grid-template-columns: 1fr; }
@@ -351,8 +387,7 @@
     @media (max-width: 560px) {
       .wrap { width: min(calc(100% - 36px), var(--max)); }
       .nav { min-height: 66px; }
-      .wordmark { font-size: 15px; }
-      .wordmark span { display: none; }
+      .wordmark img { width: 150px; }
       .status { font-size: 10px; }
       .hero { gap: 78px; padding-block: 58px 72px; }
       h1 { font-size: clamp(42px, 12vw, 50px); line-height: 1; }
@@ -363,6 +398,11 @@
       .sample { padding: 22px 20px; box-shadow: 8px 8px 0 var(--clay); }
       .sample h2 { font-size: 28px; }
       .sample::before { top: -34px; left: 0; right: auto; font-size: 9px; }
+      .video-story { padding-block: 76px 82px; }
+      .video-intro { margin-bottom: 30px; }
+      .video-intro h2 { font-size: clamp(38px, 10.5vw, 46px); line-height: 1.06; }
+      .video-intro p:last-child { font-size: 17px; }
+      .video-shell video { box-shadow: 8px 8px 0 var(--clay); }
       .notice-row { grid-template-columns: 72px 1fr; gap: 10px; }
       .section h2 { margin-bottom: 36px; font-size: clamp(38px, 10.5vw, 46px); line-height: 1.06; }
       .steps li { grid-template-columns: 42px 1fr; gap: 10px; }
@@ -389,7 +429,7 @@
 
   <header>
     <div class="wrap nav">
-      <div class="wordmark">PhotonBid <span>by Orynavo</span></div>
+      <div class="wordmark"><img src="assets/photonbid-logo.svg" alt="PhotonBid"></div>
       <div class="status">Early research</div>
     </div>
   </header>
@@ -417,6 +457,24 @@
         </dl>
         <span class="source-chip">Link to the official notice</span>
       </aside>
+    </section>
+
+    <section class="video-story" aria-labelledby="video-title">
+      <div class="wrap video-intro">
+        <p class="section-label">One minute overview</p>
+        <div>
+          <h2 id="video-title">See the idea from broad alert to official source.</h2>
+          <p>This short example follows a specialist supplier through the proposed process. The tender details are illustrative, and PhotonBid remains an early research concept.</p>
+        </div>
+      </div>
+      <div class="wrap video-shell">
+        <video controls preload="metadata" playsinline poster="assets/photonbid-explainer-poster.png" aria-label="PhotonBid process explainer">
+          <source src="assets/photonbid-explainer.mp4" type="video/mp4">
+          <track kind="captions" srclang="en" label="English" src="assets/photonbid-explainer.en.vtt" default>
+          Your browser does not support this video. You can <a href="assets/photonbid-explainer.mp4">open the PhotonBid explainer directly</a>.
+        </video>
+        <p class="video-note">The video is hosted on this site. It does not autoplay, load a third party player, or add tracking. English captions are available in the player.</p>
+      </div>
     </section>
 
     <section class="section" id="how" aria-labelledby="how-title">
