@@ -14,6 +14,10 @@ REQUIRED = {
     "index.html", "privacy.html", "404.html", "README.md", ".gitignore",
     "CNAME", "og-image.png", "favicon.ico", "email-signature-logo.png",
     "photonbid/index.html",
+    "photonbid/assets/photonbid-logo.svg",
+    "photonbid/assets/photonbid-explainer.mp4",
+    "photonbid/assets/photonbid-explainer-poster.png",
+    "photonbid/assets/photonbid-explainer.en.vtt",
 }
 PUBLIC_HTML = ("index.html", "privacy.html", "404.html", "photonbid/index.html")
 HTML_FILES = [ROOT / name for name in PUBLIC_HTML]
@@ -235,6 +239,12 @@ def main() -> int:
         "official notice always takes precedence",
     ):
         check(phrase in photonbid, f"photonbid/index.html: required message present ({phrase})", failures)
+    check("<video" in photonbid and " controls" in photonbid, "photonbid/index.html: accessible video controls present", failures)
+    check(not re.search(r"<video[^>]*\sautoplay(?:\s|=|>)", photonbid), "photonbid/index.html: video does not autoplay", failures)
+    check('preload="metadata"' in photonbid and "playsinline" in photonbid, "photonbid/index.html: restrained video loading and inline playback", failures)
+    check('kind="captions"' in photonbid and 'srclang="en"' in photonbid, "photonbid/index.html: English captions present", failures)
+    check("youtube" not in photonbid and "vimeo" not in photonbid, "photonbid/index.html: no third party video host", failures)
+    check((ROOT / "photonbid/assets/photonbid-explainer.mp4").stat().st_size > 1_000_000, "PhotonBid explainer has a nontrivial media payload", failures)
 
     check((ROOT / "CNAME").read_text(encoding="utf-8").strip() == "orynavo.com", "CNAME: canonical domain is orynavo.com", failures)
     check("https://orynavo.com/" in index, "index.html: canonical Orynavo domain is present", failures)
