@@ -24,6 +24,7 @@ The supplied symbol and wordmark paths are locked. Do not redraw, simplify, stre
 | Open Graph | `social/open-graph-1200x630.png` |
 | YouTube avatar | `social/youtube-avatar-800x800.png` |
 | YouTube banner | `social/youtube-banner-2560x1440.png` |
+| YouTube video watermark | `social/youtube-watermark-150.png` |
 | Visual QA sheet | `review/orynavo-identity-contact-sheet.png` |
 | Machine validation | `validation-report.json` |
 | Integrity hashes | `manifest-sha256.txt` |
@@ -51,7 +52,7 @@ Keep at least one detached-square module of clear space around the horizontal lo
 
 ## Platform notes
 
-The Apple touch icon and YouTube avatar intentionally use an opaque warm-paper background for predictable platform rendering. The favicon and core logo PNGs retain transparency. The YouTube banner's important logo and phrase are entirely inside the central 1546×423px safe area.
+The Apple touch icon and YouTube avatar intentionally use an opaque warm-paper background for predictable platform rendering. The favicon, YouTube watermark, and core logo PNGs retain transparency. The YouTube watermark is a 150×150px symbol-only PNG under 1 MB. The YouTube banner's important logo and phrase are entirely inside the central 1546×423px safe area.
 
 ## Supporting language
 

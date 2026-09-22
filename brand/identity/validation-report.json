@@ -275,6 +275,21 @@
       }
     },
     {
+      "name": "dimensions:social/youtube-watermark-150.png",
+      "passed": true,
+      "details": {
+        "actual": [
+          150,
+          150
+        ],
+        "expected": [
+          150,
+          150
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
       "name": "dimensions:review/orynavo-identity-contact-sheet.png",
       "passed": true,
       "details": {
@@ -341,6 +356,16 @@
     },
     {
       "name": "transparency:email/orynavo-email-signature-320x80.png",
+      "passed": true,
+      "details": {
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "name": "transparency:social/youtube-watermark-150.png",
       "passed": true,
       "details": {
         "alpha_extrema": [
@@ -471,6 +496,14 @@
           1750,
           890
         ]
+      }
+    },
+    {
+      "name": "youtube-watermark-filesize",
+      "passed": true,
+      "details": {
+        "bytes": 8334,
+        "maximum_bytes": 1000000
       }
     },
     {
