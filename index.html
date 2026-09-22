@@ -3,74 +3,710 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f5f4ed">
-  <meta name="description" content="Orynavo researches recurring work problems and builds small digital products when the evidence supports them.">
+  <meta name="theme-color" content="#f3f0e7">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Orynavo turns difficult operational decisions into clear, accountable systems through applied AI, careful prototyping and operator led delivery.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Orynavo | Small products for repeated problems">
-  <meta property="og:description" content="We study recurring work problems and build small digital products when the evidence supports them.">
+  <meta property="og:title" content="Orynavo | Applied AI and operational systems">
+  <meta property="og:description" content="Clearer decisions, better operating control and working systems built around the evidence your team can trust.">
   <meta property="og:url" content="https://orynavo.com/">
   <meta property="og:image" content="https://orynavo.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <link rel="canonical" href="https://orynavo.com/">
-  <title>Orynavo | Small products for repeated problems</title>
+  <title>Orynavo | Applied AI and operational systems</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <style>
-    :root{--paper:#f5f4ed;--ink:#141413;--clay:#c96442;--clay-dark:#a94d30;--muted:#5e5d59;--soft:#e8e6dc;--ivory:#faf9f5;--line:#d8d5ca;--max:1180px;--sans:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;--serif:Georgia,"Times New Roman",serif}
-    *{box-sizing:border-box}html{scroll-behavior:smooth;overflow-x:hidden}body{margin:0;min-width:0;overflow-x:hidden;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6}a{color:inherit;text-underline-offset:.2em}a:hover{text-decoration-thickness:2px}a:focus-visible,button:focus-visible{outline:3px solid var(--clay);outline-offset:4px}.skip{position:fixed;left:1rem;top:1rem;z-index:100;transform:translateY(-180%);background:var(--ink);color:var(--ivory);padding:.7rem 1rem;border-radius:.5rem}.skip:focus{transform:none}.wrap{width:min(calc(100% - 3rem),var(--max));margin-inline:auto}.site-header{border-bottom:1px solid rgba(20,20,19,.14)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:2rem}.brand{display:inline-flex;align-items:center;gap:.7rem;font:500 1.3rem/1 var(--serif);text-decoration:none}.brand-mark{width:1.25rem;height:1.25rem;border:4px solid var(--clay);border-radius:50%;position:relative}.brand-mark::after{content:"";position:absolute;width:4px;height:4px;border-radius:50%;background:var(--ink);inset:50% auto auto 50%;transform:translate(-50%,-50%)}.nav-links{display:flex;align-items:center;gap:1.5rem;font-size:.9rem}.nav-links a{text-decoration:none}.nav-links a:hover{text-decoration:underline}.hero{padding:clamp(5rem,11vw,9rem) 0 clamp(5rem,9vw,8rem)}.eyebrow{margin:0 0 1.4rem;color:var(--clay-dark);font-size:.76rem;font-weight:700;letter-spacing:.13em;text-transform:uppercase}.hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(260px,.7fr);gap:clamp(3rem,8vw,8rem);align-items:end}.hero h1{max-width:900px;margin:0;font:500 clamp(3.25rem,7.3vw,6.7rem)/.98 var(--serif);letter-spacing:-.045em}.hero h1 em{color:var(--clay-dark);font-style:normal}.hero-aside{padding:1.5rem 0 0;border-top:1px solid var(--ink)}.hero-aside p{margin:0;color:var(--muted);font-size:clamp(1.05rem,1.5vw,1.24rem);line-height:1.55}.hero-aside a{display:inline-block;margin-top:1.5rem;font-weight:650;text-decoration:none}.hero-aside a::after{content:" ↓";color:var(--clay)}.statement{background:var(--ink);color:var(--ivory);padding:clamp(4.5rem,8vw,7.5rem) 0}.statement-grid{display:grid;grid-template-columns:.55fr 1.45fr;gap:clamp(2rem,8vw,8rem)}.section-no{color:#c6c3ba;font-size:.75rem;letter-spacing:.13em;text-transform:uppercase}.statement h2,.section-head h2{margin:0;font:500 clamp(2.5rem,5vw,4.8rem)/1.06 var(--serif);letter-spacing:-.035em}.statement h2{max-width:880px}.statement h2 span{color:#df7857}.statement p{max-width:650px;margin:2rem 0 0;color:#c6c3ba;font-size:1.05rem}.method{padding:clamp(5rem,10vw,9rem) 0}.section-head{display:grid;grid-template-columns:.55fr 1.45fr;gap:clamp(2rem,8vw,8rem);margin-bottom:clamp(3rem,6vw,5rem)}.steps{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}.step{display:grid;grid-template-columns:72px minmax(170px,.65fr) minmax(0,1fr);gap:2rem;padding:2rem 0;border-bottom:1px solid var(--line);align-items:start}.step-no{font:500 1rem/1.3 var(--serif);color:var(--clay-dark)}.step h3{margin:0;font:500 clamp(1.5rem,2.5vw,2.15rem)/1.1 var(--serif)}.step p{margin:0;color:var(--muted);max-width:610px}.research{padding:clamp(5rem,10vw,9rem) 0;background:var(--soft)}.research-card{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);overflow:hidden;border-radius:24px;background:var(--ivory);box-shadow:0 0 0 1px rgba(20,20,19,.09),0 18px 55px rgba(20,20,19,.06)}.research-visual{min-height:440px;padding:clamp(2rem,5vw,4rem);display:flex;flex-direction:column;justify-content:space-between;background:var(--clay);color:var(--ivory);position:relative;isolation:isolate}.research-visual::after{content:"";position:absolute;width:360px;aspect-ratio:1;border:1px solid rgba(250,249,245,.45);border-radius:50%;right:-120px;bottom:-140px;box-shadow:0 0 0 42px rgba(250,249,245,.08),0 0 0 84px rgba(250,249,245,.05);z-index:-1}.status{width:max-content;max-width:100%;padding:.4rem .75rem;border:1px solid rgba(250,249,245,.55);border-radius:999px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase}.research-visual strong{font:500 clamp(2.3rem,5vw,4.25rem)/1 var(--serif);letter-spacing:-.03em}.research-copy{padding:clamp(2rem,5vw,4.5rem);display:flex;flex-direction:column;justify-content:center}.research-copy .eyebrow{margin-bottom:1rem}.research-copy h2{margin:0 0 1.5rem;font:500 clamp(2.25rem,4vw,3.7rem)/1.05 var(--serif);letter-spacing:-.03em}.research-copy p{margin:.5rem 0;color:var(--muted);font-size:1.04rem}.research-copy .plain{margin-top:1.6rem;padding-top:1.4rem;border-top:1px solid var(--line);color:var(--ink);font-size:.92rem}.principles{padding:clamp(5rem,10vw,9rem) 0}.principle-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}.principle{background:var(--paper);padding:clamp(1.7rem,3vw,2.8rem)}.principle svg{width:42px;height:42px;color:var(--clay-dark);margin-bottom:2rem}.principle h3{margin:0 0 .75rem;font:500 1.55rem/1.2 var(--serif)}.principle p{margin:0;color:var(--muted)}.about{padding:clamp(4rem,7vw,6rem) 0;border-top:1px solid var(--line)}.about-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(2rem,10vw,9rem)}.about h2{margin:0;font:500 clamp(2.2rem,4vw,3.6rem)/1.1 var(--serif)}.about p{margin:.3rem 0 0;color:var(--muted)}.lead-link{display:inline-flex;align-items:center;gap:.55rem;margin-top:1.25rem;font-weight:650}.lead-link svg{width:1rem;height:1rem}.site-footer{background:var(--ink);color:var(--ivory);padding:2.2rem 0}.footer-row{display:flex;justify-content:space-between;align-items:center;gap:2rem}.footer-row p{margin:0;color:#aaa89f;font-size:.83rem}.footer-links{display:flex;gap:1.4rem;font-size:.83rem}.footer-links a{color:#dedbd1}
-    @media(max-width:760px){.wrap{width:min(calc(100% - 2rem),var(--max))}.nav{min-height:66px}.nav-links{gap:1rem}.nav-links a:first-child{display:none}.hero{padding:4.7rem 0 5rem}.hero-grid,.statement-grid,.section-head,.research-card,.about-grid{grid-template-columns:1fr}.hero-grid{gap:2.5rem}.hero h1{font-size:clamp(3rem,14.7vw,4.15rem)}.statement-grid,.section-head{gap:1.5rem}.step{grid-template-columns:42px 1fr;gap:1rem}.step p{grid-column:2}.research-visual{min-height:310px}.principle-grid{grid-template-columns:1fr}.footer-row{align-items:flex-start;flex-direction:column;gap:1rem}}
-    @media(max-width:420px){.nav-links{gap:.75rem;font-size:.82rem}.hero h1{font-size:3rem}.step{padding:1.6rem 0}.research-copy,.research-visual{padding:1.65rem}.research-visual strong{font-size:2.7rem}.footer-links{flex-wrap:wrap}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+    :root {
+      --paper: #f3f0e7;
+      --paper-bright: #fbf9f3;
+      --ink: #171714;
+      --ink-soft: #262520;
+      --clay: #c96442;
+      --clay-dark: #9f472f;
+      --sand: #ded8ca;
+      --line: #c9c2b4;
+      --muted: #646159;
+      --dark-muted: #bbb6aa;
+      --max: 1240px;
+      --pad: clamp(1.25rem, 4vw, 3.5rem);
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; overflow-x: hidden; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: inherit; text-underline-offset: .22em; text-decoration-thickness: 1px; }
+    a:hover { text-decoration-thickness: 2px; }
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid var(--clay);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+    ::selection { background: var(--clay); color: var(--paper-bright); }
+
+    .skip-link {
+      position: fixed;
+      left: 1rem;
+      top: 1rem;
+      z-index: 100;
+      min-height: 44px;
+      padding: .7rem 1rem;
+      transform: translateY(-180%);
+      background: var(--ink);
+      color: var(--paper-bright);
+    }
+    .skip-link:focus { transform: none; }
+    .wrap { width: min(calc(100% - (var(--pad) * 2)), var(--max)); margin-inline: auto; }
+    .kicker {
+      margin: 0;
+      color: var(--clay-dark);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+    .section-index {
+      display: inline-flex;
+      align-items: center;
+      gap: .65rem;
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 650;
+      letter-spacing: .12em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+    .section-index::before { content: ""; width: 2rem; border-top: 1px solid currentColor; }
+    .section-title {
+      max-width: 900px;
+      margin: 1.4rem 0 0;
+      font: 500 clamp(2.7rem, 5.6vw, 5.6rem)/.98 var(--serif);
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: .8rem;
+      padding: .7rem 1.15rem;
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      background: var(--ink);
+      color: var(--paper-bright);
+      font-size: .86rem;
+      font-weight: 650;
+      text-decoration: none;
+      transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+    }
+    .button::after { content: "↗"; font-size: 1rem; line-height: 1; }
+    .button:hover { transform: translateY(-2px); background: var(--clay); border-color: var(--clay); }
+    .button.light { background: var(--paper-bright); border-color: var(--paper-bright); color: var(--ink); }
+    .button.light:hover { background: var(--clay); border-color: var(--clay); color: var(--paper-bright); }
+
+    .site-header { border-bottom: 1px solid rgba(23, 23, 20, .17); }
+    .nav {
+      min-height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+    .brand { display: inline-flex; min-height: 44px; align-items: center; text-decoration: none; }
+    .brand img { width: clamp(144px, 14vw, 176px); height: auto; }
+    .nav-links { display: flex; align-items: center; gap: clamp(.5rem, 2.5vw, 2rem); }
+    .nav-links > a:not(.button) {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      font-size: .83rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .nav-links > a:not(.button):hover { text-decoration: underline; }
+    .nav .button { min-height: 44px; padding-block: .45rem; }
+
+    .hero { padding: clamp(4.5rem, 9vw, 9rem) 0 clamp(5rem, 10vw, 9rem); }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.45fr) minmax(270px, .55fr);
+      gap: clamp(3rem, 8vw, 8.5rem);
+      align-items: end;
+    }
+    .hero h1 {
+      max-width: 920px;
+      margin: 1.3rem 0 0;
+      font: 500 clamp(4rem, 7.7vw, 7.7rem)/.9 var(--serif);
+      letter-spacing: -.06em;
+      text-wrap: balance;
+    }
+    .hero h1 em { display: block; color: var(--clay-dark); font-style: normal; }
+    .hero-aside { padding-top: 1.4rem; border-top: 1px solid var(--ink); }
+    .hero-aside p { margin: 0; color: var(--muted); font-size: clamp(1.05rem, 1.45vw, 1.25rem); line-height: 1.55; }
+    .hero-aside .button { margin-top: 1.7rem; }
+    .hero-note {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 650;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .premise { background: var(--ink); color: var(--paper-bright); }
+    .premise-grid {
+      display: grid;
+      grid-template-columns: minmax(170px, .42fr) minmax(0, 1.58fr);
+      gap: clamp(3rem, 10vw, 10rem);
+      padding-block: clamp(5rem, 10vw, 9rem);
+    }
+    .premise .section-index { color: var(--dark-muted); align-self: start; }
+    .premise-copy h2 {
+      max-width: 960px;
+      margin: 0;
+      font: 500 clamp(2.65rem, 5.35vw, 5.5rem)/1 var(--serif);
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+    .premise-copy h2 span { color: #dc7657; }
+    .premise-copy > p { max-width: 720px; margin: 2rem 0 0 auto; color: var(--dark-muted); font-size: 1.06rem; }
+
+    .capabilities { padding: clamp(5rem, 10vw, 9rem) 0; }
+    .cap-head {
+      display: grid;
+      grid-template-columns: .8fr 1.2fr;
+      gap: clamp(2rem, 8vw, 8rem);
+      align-items: end;
+      margin-bottom: clamp(3rem, 7vw, 6rem);
+    }
+    .cap-head p { max-width: 540px; margin: 0; color: var(--muted); font-size: 1.08rem; }
+    .capability-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); }
+    .capability {
+      display: grid;
+      grid-template-columns: 70px minmax(240px, .9fr) minmax(280px, 1.1fr);
+      gap: clamp(1.5rem, 5vw, 5rem);
+      align-items: start;
+      padding: clamp(2rem, 4vw, 3.7rem) 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .capability .number { color: var(--clay-dark); font: 500 1.05rem/1 var(--serif); }
+    .capability h3 { margin: -.2rem 0 0; font: 500 clamp(1.75rem, 2.8vw, 2.8rem)/1.08 var(--serif); letter-spacing: -.025em; }
+    .capability p { max-width: 580px; margin: 0; color: var(--muted); }
+
+    .triggers { background: var(--paper-bright); }
+    .triggers-grid {
+      display: grid;
+      grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+      gap: clamp(3rem, 9vw, 9rem);
+      padding-block: clamp(5rem, 10vw, 9rem);
+    }
+    .triggers h2 { margin: 1.2rem 0 0; font: 500 clamp(2.7rem, 5vw, 5rem)/1 var(--serif); letter-spacing: -.04em; }
+    .triggers-intro { max-width: 520px; margin-top: 2rem; color: var(--muted); }
+    .trigger-list { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--ink); counter-reset: trigger; }
+    .trigger-list li {
+      position: relative;
+      counter-increment: trigger;
+      padding: 1.8rem 0 1.8rem 3.3rem;
+      border-bottom: 1px solid var(--line);
+      font: 500 clamp(1.3rem, 2.2vw, 2rem)/1.25 var(--serif);
+    }
+    .trigger-list li::before {
+      content: counter(trigger, decimal-leading-zero);
+      position: absolute;
+      left: 0;
+      top: 2.15rem;
+      color: var(--clay-dark);
+      font: 700 .68rem/1 var(--sans);
+      letter-spacing: .08em;
+    }
+
+    .approach { background: var(--clay); color: var(--ink); }
+    .approach-inner { padding-block: clamp(5rem, 10vw, 9rem); }
+    .approach-top {
+      display: grid;
+      grid-template-columns: .55fr 1.45fr;
+      gap: clamp(3rem, 9vw, 9rem);
+      margin-bottom: clamp(3rem, 7vw, 6rem);
+    }
+    .approach .section-index { color: #47251c; }
+    .approach h2 { max-width: 900px; margin: 0; font: 500 clamp(2.8rem, 5.7vw, 5.7rem)/.98 var(--serif); letter-spacing: -.05em; }
+    .approach-steps { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid rgba(23, 23, 20, .55); }
+    .approach-step { min-width: 0; padding: 1.5rem clamp(1rem, 2vw, 2rem) 0 0; }
+    .approach-step + .approach-step { padding-left: clamp(1rem, 2vw, 2rem); border-left: 1px solid rgba(23, 23, 20, .35); }
+    .approach-step span { display: block; font-size: .67rem; font-weight: 750; letter-spacing: .1em; text-transform: uppercase; }
+    .approach-step h3 { margin: 3rem 0 .8rem; font: 500 clamp(1.45rem, 2.2vw, 2.1rem)/1.05 var(--serif); }
+    .approach-step p { margin: 0; color: #4b2b22; font-size: .91rem; line-height: 1.55; }
+
+    .proof { padding: clamp(5rem, 10vw, 9rem) 0; }
+    .proof .section-title { margin-bottom: clamp(3rem, 7vw, 6rem); }
+    .proof-feature {
+      display: grid;
+      grid-template-columns: minmax(0, 1.03fr) minmax(0, .97fr);
+      gap: clamp(2rem, 6vw, 6rem);
+      align-items: stretch;
+      padding: clamp(2rem, 5vw, 4.8rem);
+      background: var(--ink);
+      color: var(--paper-bright);
+    }
+    .proof-copy { display: flex; flex-direction: column; align-items: flex-start; }
+    .proof-label { color: #dc7657; font-size: .7rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+    .proof-copy h3 { max-width: 650px; margin: 1.25rem 0; font: 500 clamp(2.4rem, 4.6vw, 4.9rem)/.98 var(--serif); letter-spacing: -.045em; }
+    .proof-copy > p { max-width: 600px; margin: 0; color: var(--dark-muted); }
+    .proof-copy .proof-note { margin-top: 1.5rem; padding-top: 1.2rem; border-top: 1px solid #403f39; color: #8f8b82; font-size: .8rem; }
+    .proof-copy .button { margin-top: auto; transform: translateY(1.2rem); }
+    .proof-copy .button:hover { transform: translateY(calc(1.2rem - 2px)); }
+
+    .evidence-panel { align-self: center; padding: clamp(1.4rem, 3vw, 2.6rem); background: var(--paper); color: var(--ink); }
+    .evidence-bar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-bottom: 1.1rem; border-bottom: 1px solid var(--ink); }
+    .evidence-bar strong { font: 500 1.35rem/1 var(--serif); }
+    .evidence-bar span { color: var(--clay-dark); font-size: .65rem; font-weight: 750; letter-spacing: .09em; text-transform: uppercase; }
+    .evidence-row { display: grid; grid-template-columns: 105px 1fr; gap: 1rem; padding: 1.25rem 0; border-bottom: 1px solid var(--line); }
+    .evidence-row:last-child { border-bottom: 0; padding-bottom: 0; }
+    .evidence-row small { color: var(--muted); font-size: .67rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; }
+    .evidence-row p { margin: 0; font: 500 1.02rem/1.35 var(--serif); }
+
+    .case-study {
+      display: grid;
+      grid-template-columns: .58fr 1.42fr;
+      gap: clamp(2rem, 7vw, 7rem);
+      padding: clamp(4rem, 8vw, 7rem) clamp(0rem, 3vw, 3rem) 0;
+    }
+    .case-study h3 { margin: 1rem 0 0; font: 500 clamp(2rem, 3.8vw, 3.8rem)/1 var(--serif); letter-spacing: -.035em; }
+    .case-detail { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--ink); }
+    .case-detail > div { padding: 1.5rem clamp(1rem, 2vw, 2rem) 0 0; }
+    .case-detail > div + div { padding-left: clamp(1rem, 2vw, 2rem); border-left: 1px solid var(--line); }
+    .case-detail h4 { margin: 0 0 1rem; color: var(--clay-dark); font-size: .68rem; letter-spacing: .1em; text-transform: uppercase; }
+    .case-detail p { margin: 0; color: var(--muted); font-size: .92rem; }
+    .case-disclosure { grid-column: 1 / -1; margin: 2rem 0 0; color: var(--muted); font-size: .78rem; }
+
+    .fit { background: var(--ink); color: var(--paper-bright); }
+    .fit-inner { padding-block: clamp(5rem, 10vw, 9rem); }
+    .fit-top { display: grid; grid-template-columns: .7fr 1.3fr; gap: clamp(3rem, 9vw, 9rem); }
+    .fit h2 { margin: 0; font: 500 clamp(2.7rem, 5.4vw, 5.4rem)/1 var(--serif); letter-spacing: -.045em; }
+    .fit-columns { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 5rem); margin-top: clamp(3rem, 7vw, 6rem); }
+    .fit-column { border-top: 1px solid #5a5851; padding-top: 1.4rem; }
+    .fit-column h3 { margin: 0 0 1.7rem; color: #dc7657; font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; }
+    .fit-column ul { margin: 0; padding: 0; list-style: none; }
+    .fit-column li { padding: 1rem 0; border-bottom: 1px solid #35342f; color: var(--dark-muted); }
+    .fit-column li strong { color: var(--paper-bright); font-weight: 620; }
+
+    .engagements { padding: clamp(5rem, 10vw, 9rem) 0; }
+    .engagement-head { display: grid; grid-template-columns: 1fr .72fr; gap: clamp(2rem, 7vw, 7rem); align-items: end; margin-bottom: clamp(3rem, 6vw, 5rem); }
+    .engagement-head p { max-width: 500px; margin: 0; color: var(--muted); }
+    .engagement-list { border-top: 1px solid var(--ink); }
+    .engagement {
+      display: grid;
+      grid-template-columns: 70px minmax(230px, .75fr) minmax(300px, 1.25fr) auto;
+      gap: clamp(1rem, 4vw, 4rem);
+      align-items: center;
+      min-height: 136px;
+      border-bottom: 1px solid var(--line);
+    }
+    .engagement .number { color: var(--clay-dark); font-size: .7rem; font-weight: 750; letter-spacing: .1em; }
+    .engagement h3 { margin: 0; font: 500 clamp(1.55rem, 2.7vw, 2.55rem)/1.08 var(--serif); }
+    .engagement p { max-width: 560px; margin: 0; color: var(--muted); }
+    .engagement .duration { justify-self: end; color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+
+    .about { background: var(--paper-bright); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+      gap: clamp(3rem, 10vw, 10rem);
+      padding-block: clamp(5rem, 10vw, 9rem);
+      align-items: start;
+    }
+    .about h2 { margin: 1.2rem 0 0; font: 500 clamp(2.8rem, 5.8vw, 5.8rem)/.97 var(--serif); letter-spacing: -.05em; }
+    .about-copy { padding-top: 2.2rem; border-top: 1px solid var(--ink); }
+    .about-copy p { margin: 0 0 1.2rem; color: var(--muted); font-size: 1.05rem; }
+    .text-link { display: inline-flex; min-height: 44px; align-items: center; gap: .55rem; color: var(--clay-dark); font-size: .84rem; font-weight: 720; }
+    .text-link::after { content: "↗"; font-size: 1rem; }
+
+    .contact { background: var(--clay); }
+    .contact-inner { padding-block: clamp(5rem, 11vw, 10rem); }
+    .contact h2 { max-width: 1050px; margin: 0; font: 500 clamp(3.2rem, 7.5vw, 7.8rem)/.9 var(--serif); letter-spacing: -.06em; }
+    .contact-row { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin-top: clamp(2.5rem, 6vw, 5rem); padding-top: 1.4rem; border-top: 1px solid rgba(23, 23, 20, .55); }
+    .contact-row p { max-width: 620px; margin: 0; color: #4b2b22; font-size: 1.05rem; }
+    .contact .button:hover { background: var(--paper-bright); border-color: var(--paper-bright); color: var(--ink); }
+
+    .site-footer { padding: 2.2rem 0; background: var(--paper); }
+    .footer-row { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2rem; }
+    .footer-brand { display: inline-flex; width: 142px; min-height: 44px; align-items: center; }
+    .footer-meta { display: flex; flex-wrap: wrap; justify-content: flex-end; align-items: center; gap: .4rem 1.3rem; color: var(--muted); font-size: .76rem; }
+    .footer-meta a { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
+    .footer-meta p { margin: 0; }
+
+    [data-reveal] { opacity: 0; transform: translateY(20px); transition: opacity 620ms ease, transform 620ms ease; }
+    [data-reveal].revealed { opacity: 1; transform: none; }
+
+    @media (max-width: 920px) {
+      .hero-grid, .premise-grid, .cap-head, .triggers-grid, .approach-top, .fit-top, .engagement-head, .about-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 3rem; }
+      .hero-aside { max-width: 620px; }
+      .premise-copy > p { margin-left: 0; }
+      .cap-head { gap: 1.5rem; }
+      .capability { grid-template-columns: 52px minmax(200px, .75fr) minmax(250px, 1.25fr); gap: 1.5rem; }
+      .approach-top { gap: 1.5rem; }
+      .approach-steps { grid-template-columns: 1fr 1fr; }
+      .approach-step { padding-bottom: 2rem; }
+      .approach-step:nth-child(3) { padding-left: 0; border-left: 0; border-top: 1px solid rgba(23, 23, 20, .35); }
+      .approach-step:nth-child(4) { border-top: 1px solid rgba(23, 23, 20, .35); }
+      .case-study { grid-template-columns: 1fr; }
+      .fit-top { gap: 1.5rem; }
+      .engagement { grid-template-columns: 50px minmax(200px, .75fr) minmax(240px, 1.25fr); }
+      .engagement .duration { grid-column: 2; grid-row: 2; justify-self: start; margin-top: -1.6rem; }
+      .about-grid { gap: 3rem; }
+      .about-copy { max-width: 640px; }
+    }
+
+    @media (max-width: 700px) {
+      .site-header .nav { min-height: 70px; }
+      .nav-links > a:not(.button) { display: none; }
+      .hero { padding-top: 4rem; }
+      .hero h1 { font-size: clamp(3.35rem, 16vw, 5.2rem); }
+      .hero-note { grid-template-columns: 1fr; gap: .25rem; }
+      .capability { grid-template-columns: 38px 1fr; }
+      .capability p { grid-column: 2; }
+      .approach-steps { grid-template-columns: 1fr; }
+      .approach-step, .approach-step + .approach-step, .approach-step:nth-child(3) { padding: 1.6rem 0; border-left: 0; border-top: 1px solid rgba(23, 23, 20, .35); }
+      .approach-step:first-child { border-top: 0; }
+      .approach-step h3 { margin-top: 1.4rem; }
+      .proof-feature { grid-template-columns: 1fr; }
+      .proof-copy .button { margin-top: 1rem; transform: none; }
+      .proof-copy .button:hover { transform: translateY(-2px); }
+      .case-detail { grid-template-columns: 1fr; }
+      .case-detail > div, .case-detail > div + div { padding: 1.5rem 0; border-left: 0; border-bottom: 1px solid var(--line); }
+      .case-detail > div:last-of-type { border-bottom: 0; }
+      .fit-columns { grid-template-columns: 1fr; }
+      .engagement { grid-template-columns: 40px 1fr; padding: 1.6rem 0; align-items: start; }
+      .engagement p { grid-column: 2; }
+      .engagement .duration { grid-column: 2; grid-row: auto; margin: 0; }
+      .contact-row { align-items: flex-start; flex-direction: column; }
+      .footer-row { grid-template-columns: 1fr; }
+      .footer-meta { justify-content: flex-start; }
+    }
+
+    @media (max-width: 390px) {
+      :root { --pad: 1rem; }
+      .nav { gap: .75rem; }
+      .brand img { width: 128px; }
+      .nav .button { padding-inline: .9rem; font-size: .78rem; }
+      .hero h1 { font-size: 3.3rem; }
+      .section-title, .premise-copy h2, .triggers h2, .approach h2, .fit h2, .about h2 { font-size: 2.65rem; }
+      .proof-copy h3 { font-size: 2.4rem; }
+      .contact h2 { font-size: 3rem; }
+      .evidence-row { grid-template-columns: 1fr; gap: .35rem; }
+      .footer-meta { display: grid; justify-items: start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+      [data-reveal] { opacity: 1; transform: none; }
+    }
   </style>
 </head>
 <body>
-  <a class="skip" href="#main">Skip to main content</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="site-header">
     <nav class="nav wrap" aria-label="Primary navigation">
-      <a class="brand" href="index.html" aria-label="Orynavo home"><span class="brand-mark" aria-hidden="true"></span>Orynavo</a>
-      <div class="nav-links"><a href="#method">Method</a><a href="#research">Research</a><a href="privacy.html">Privacy</a></div>
+      <a class="brand" href="#main" aria-label="Orynavo home">
+        <img src="/brand/identity/logos/orynavo-horizontal-primary.svg" alt="Orynavo">
+      </a>
+      <div class="nav-links">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#work">Selected work</a>
+        <a class="button" href="mailto:hello@orynavo.com?subject=Working%20with%20Orynavo">Start a conversation</a>
+      </div>
     </nav>
   </header>
+
   <main id="main">
     <section class="hero wrap" aria-labelledby="hero-title">
-      <p class="eyebrow">Independent product research</p>
       <div class="hero-grid">
-        <h1 id="hero-title">Small digital products for <em>real, repeated problems.</em></h1>
-        <div class="hero-aside"><p>We look for problems that keep coming up at work. Then we talk to the people who face them and build only when the evidence is convincing.</p><a href="#method">How we work</a></div>
+        <div>
+          <p class="kicker">Applied AI and operations consultancy</p>
+          <h1 id="hero-title">Turn operational complexity into <em>decisions your team can trust.</em></h1>
+        </div>
+        <div class="hero-aside">
+          <p>Orynavo turns fragmented work, unclear ownership and hard to trust data into working systems that help teams act with more confidence.</p>
+          <a class="button" href="mailto:hello@orynavo.com?subject=Working%20with%20Orynavo">Discuss the problem</a>
+          <div class="hero-note"><span>Operator led</span><span>Riyadh, Saudi Arabia</span></div>
+        </div>
       </div>
     </section>
-    <section class="statement" aria-labelledby="statement-title">
-      <div class="wrap statement-grid" data-reveal>
-        <span class="section-no">01 / Position</span>
-        <div><h2 id="statement-title">We start with one useful job and add features only when customers ask for them.</h2><p>Orynavo is home to small digital products for specific problems. Each one is designed to run without a large operating team.</p></div>
+
+    <section class="premise" aria-labelledby="premise-title">
+      <div class="wrap premise-grid" data-reveal>
+        <span class="section-index">01 / The problem</span>
+        <div class="premise-copy">
+          <h2 id="premise-title">Most operational friction is not a software shortage. <span>It is a decision problem with systems attached.</span></h2>
+          <p>Before adding automation, we find where context gets lost, where judgment matters and what evidence a responsible person needs. The system follows that logic, not the latest tool.</p>
+        </div>
       </div>
     </section>
-    <section class="method wrap" id="method" aria-labelledby="method-title">
-      <div class="section-head" data-reveal><span class="section-no">02 / Method</span><h2 id="method-title">How an idea becomes a product.</h2></div>
-      <ol class="steps">
-        <li class="step" data-reveal><span class="step-no">01</span><h3>Find a repeated problem</h3><p>We look at real work and pay attention to problems that keep coming back. A trend or a hypothetical inconvenience is not enough.</p></li>
-        <li class="step" data-reveal><span class="step-no">02</span><h3>Ask if it is worth paying to solve</h3><p>We talk to the people who deal with the problem and learn what a useful solution would be worth to them.</p></li>
-        <li class="step" data-reveal><span class="step-no">03</span><h3>Build the smallest useful version</h3><p>We focus on the job people need done. Extra features can wait until there is a clear reason to add them.</p></li>
-        <li class="step" data-reveal><span class="step-no">04</span><h3>Keep operations light</h3><p>We automate routine support, delivery and maintenance where it makes sense. A person stays involved when judgment or responsibility calls for one.</p></li>
+
+    <section class="capabilities wrap" id="capabilities" aria-labelledby="capabilities-title">
+      <div class="cap-head" data-reveal>
+        <div>
+          <span class="section-index">02 / Capabilities</span>
+          <h2 class="section-title" id="capabilities-title">Where we help.</h2>
+        </div>
+        <p>Focused work for teams carrying operational complexity, expensive decisions or a promising idea that still needs proof.</p>
+      </div>
+      <ol class="capability-list">
+        <li class="capability" data-reveal>
+          <span class="number">01</span>
+          <h3>Applied AI and agents</h3>
+          <p>Design assistants and agent workflows around real responsibilities. We define the evidence, permissions, review points and failure paths before automation is trusted with more work.</p>
+        </li>
+        <li class="capability" data-reveal>
+          <span class="number">02</span>
+          <h3>Operational and decision systems</h3>
+          <p>Turn scattered spreadsheets, approvals and handoffs into a coherent control layer. The result may be a workflow, decision model, internal tool or integration that makes ownership visible.</p>
+        </li>
+        <li class="capability" data-reveal>
+          <span class="number">03</span>
+          <h3>Telecom and asset lifecycle insight</h3>
+          <p>Frame problems across inventory, capital work, asset governance and operational data. We connect business rules to system behavior without pretending the underlying domain is simple.</p>
+        </li>
+        <li class="capability" data-reveal>
+          <span class="number">04</span>
+          <h3>Validation and prototyping</h3>
+          <p>Test a service, internal system or product idea before a large build. Interviews, workflow traces and small prototypes reveal whether the problem is real and what a useful first version needs to do.</p>
+        </li>
       </ol>
     </section>
-    <section class="research" id="research" aria-labelledby="research-title">
-      <div class="wrap research-card" data-reveal>
-        <div class="research-visual"><span class="status">Early research</span><strong>Outcome<br>Sentinel</strong></div>
-        <div class="research-copy"><p class="eyebrow">Current research / n8n</p><h2 id="research-title">A successful run can still miss the point.</h2><p>Outcome Sentinel is an early research project about n8n workflows that report a successful run but do not produce the result a person expected.</p><p>We are finding out how often this happens, how much trouble it causes and whether the problem is specific enough for a small product.</p><p class="plain"><strong>Scope note:</strong> this is research, not a released product. There is no guarantee that it will become one. Any future tool could still miss failures and could not promise a business result.</p></div>
+
+    <section class="triggers" aria-labelledby="triggers-title">
+      <div class="wrap triggers-grid">
+        <div data-reveal>
+          <span class="section-index">03 / Client triggers</span>
+          <h2 id="triggers-title">The moment to bring us in.</h2>
+          <p class="triggers-intro">A polished brief is not required. A consequential problem, access to the people doing the work and willingness to examine the current process are enough to begin.</p>
+        </div>
+        <ul class="trigger-list">
+          <li data-reveal>A critical process lives across inboxes, spreadsheets and individual memory.</li>
+          <li data-reveal>Your team has AI pilots, but no clear operating model for using them safely.</li>
+          <li data-reveal>Leaders see reports, yet still cannot trace why a decision was made.</li>
+          <li data-reveal>An internal tool idea needs evidence before budget and engineering time are committed.</li>
+          <li data-reveal>Asset or project data exists, but people do not trust it enough to act.</li>
+        </ul>
       </div>
     </section>
-    <section class="principles wrap" aria-labelledby="principles-title">
-      <div class="section-head" data-reveal><span class="section-no">03 / Guardrails</span><h2 id="principles-title">We follow a few simple rules.</h2></div>
-      <div class="principle-grid">
-        <article class="principle" data-reveal><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M6 24h36M24 6v36M11 11l26 26M37 11 11 37" fill="none" stroke="currentColor" stroke-width="2"/></svg><h3>Say what is true</h3><p>We label early research clearly. If a product launches, we describe what it does and leave out claims we cannot prove.</p></article>
-        <article class="principle" data-reveal><svg viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="17" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="5" fill="currentColor"/></svg><h3>Keep the scope small</h3><p>Each project starts with one repeated problem and a result we can check. We do not assume it needs to become a broad platform.</p></article>
-        <article class="principle" data-reveal><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 34c6-16 14-22 32-22-3 17-12 25-27 25" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 40c7-11 15-17 25-21" fill="none" stroke="currentColor" stroke-width="2"/></svg><h3>Keep a person responsible</h3><p>Automation can take care of repetitive work. Human judgment stays available when a decision needs an accountable person.</p></article>
+
+    <section class="approach" aria-labelledby="approach-title">
+      <div class="wrap approach-inner">
+        <div class="approach-top" data-reveal>
+          <span class="section-index">04 / Approach</span>
+          <h2 id="approach-title">From ambiguity to a working system.</h2>
+        </div>
+        <div class="approach-steps">
+          <article class="approach-step" data-reveal>
+            <span>01 / Frame</span>
+            <h3>Define the decision</h3>
+            <p>Name the actor, the decision, the current evidence and the cost of getting it wrong.</p>
+          </article>
+          <article class="approach-step" data-reveal>
+            <span>02 / Trace</span>
+            <h3>Follow the work</h3>
+            <p>Observe the process as it happens. Find hidden handoffs, exceptions and points where context disappears.</p>
+          </article>
+          <article class="approach-step" data-reveal>
+            <span>03 / Build</span>
+            <h3>Make the logic tangible</h3>
+            <p>Create a small working system around the most important flow, with evidence and human review built in.</p>
+          </article>
+          <article class="approach-step" data-reveal>
+            <span>04 / Learn</span>
+            <h3>Test in real work</h3>
+            <p>Use real cases, record failure modes and decide what deserves further investment.</p>
+          </article>
+        </div>
       </div>
     </section>
-    <section class="about" aria-labelledby="about-title"><div class="wrap about-grid" data-reveal><h2 id="about-title">We research the problem before building a product.</h2><div><p>Nadim Najjar leads Orynavo. The work is independent and at an early stage. It starts with direct conversations about real problems.</p><a class="lead-link" href="https://www.linkedin.com/in/nadim-najjar" rel="me noreferrer">Nadim on LinkedIn <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 15 15 5M7 5h8v8" fill="none" stroke="currentColor" stroke-width="1.7"/></svg></a></div></div></section>
+
+    <section class="proof wrap" id="work" aria-labelledby="proof-title">
+      <span class="section-index">05 / Selected proof</span>
+      <h2 class="section-title" id="proof-title">Proof before scale.</h2>
+
+      <article class="proof-feature" data-reveal>
+        <div class="proof-copy">
+          <span class="proof-label">PhotonBid / Early research</span>
+          <h3>Technical tender fit, traced to the source.</h3>
+          <p>PhotonBid explores whether a specialist supplier can compare official European tender requirements with its actual catalogue before spending hours on a bid pack. Each possible fit would quote the requirement, show the product evidence and flag what could rule the opportunity out.</p>
+          <p class="proof-note">PhotonBid is a research project, not a released product. It does not write bids, give procurement advice or guarantee relevance, eligibility or outcomes.</p>
+          <a class="button light" href="photonbid/">View PhotonBid research</a>
+        </div>
+        <div class="evidence-panel" aria-label="Illustrative PhotonBid evidence trace">
+          <div class="evidence-bar"><strong>Fit review</strong><span>Illustrative trace</span></div>
+          <div class="evidence-row"><small>Requirement</small><p>Quoted technical specification from the official tender document.</p></div>
+          <div class="evidence-row"><small>Catalogue</small><p>Possible product family and the source used for comparison.</p></div>
+          <div class="evidence-row"><small>Uncertainty</small><p>Missing details or conditions that need specialist review.</p></div>
+          <div class="evidence-row"><small>Decision</small><p>A person checks the sources before deciding whether to continue.</p></div>
+        </div>
+      </article>
+
+      <article class="case-study" data-reveal>
+        <div>
+          <span class="proof-label">Sanitized system example</span>
+          <h3>Portfolio control without a reporting maze.</h3>
+        </div>
+        <div class="case-detail">
+          <div>
+            <h4>Situation</h4>
+            <p>Delivery, financial and asset records sit in different systems. Each review starts with reconciliation instead of a decision.</p>
+          </div>
+          <div>
+            <h4>System pattern</h4>
+            <p>A control model links commitments, work status, acceptance evidence and exceptions around a shared set of rules.</p>
+          </div>
+          <div>
+            <h4>Human judgment</h4>
+            <p>Owners see what changed, what evidence supports it and which cases still need investigation or approval.</p>
+          </div>
+          <p class="case-disclosure">This is a sanitized example of a system pattern. It omits names, data and results, and does not claim a client outcome.</p>
+        </div>
+      </article>
+    </section>
+
+    <section class="fit" aria-labelledby="fit-title">
+      <div class="wrap fit-inner">
+        <div class="fit-top" data-reveal>
+          <span class="section-index">06 / Strengths and boundaries</span>
+          <h2 id="fit-title">Useful where the work is messy and accountability still matters.</h2>
+        </div>
+        <div class="fit-columns">
+          <div class="fit-column" data-reveal>
+            <h3>Orynavo is strong at</h3>
+            <ul>
+              <li><strong>Translating operations into system logic</strong> without flattening the exceptions.</li>
+              <li><strong>Connecting business owners and technical teams</strong> around a testable definition of useful.</li>
+              <li><strong>Building evidence into AI workflows</strong> so people can inspect how an answer was reached.</li>
+              <li><strong>Reducing the size of the bet</strong> through prototypes that answer a specific question.</li>
+            </ul>
+          </div>
+          <div class="fit-column" data-reveal>
+            <h3>Orynavo does not offer</h3>
+            <ul>
+              <li><strong>Generic transformation programmes</strong> built around a predetermined platform.</li>
+              <li><strong>Unattended automation</strong> where errors can create serious operational or financial harm.</li>
+              <li><strong>Legal, regulatory or procurement advice.</strong> Qualified specialists remain responsible for those decisions.</li>
+              <li><strong>Guaranteed outcomes.</strong> The work produces evidence and a working path, not certainty.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="engagements wrap" aria-labelledby="engagement-title">
+      <div class="engagement-head" data-reveal>
+        <div>
+          <span class="section-index">07 / Engagement formats</span>
+          <h2 class="section-title" id="engagement-title">Start at the size of the question.</h2>
+        </div>
+        <p>Every engagement begins with a defined decision and ends with tangible work your team can inspect, use or choose not to pursue.</p>
+      </div>
+      <div class="engagement-list">
+        <article class="engagement" data-reveal>
+          <span class="number">01</span>
+          <h3>Decision diagnostic</h3>
+          <p>Map one consequential workflow, its evidence gaps and the intervention most worth testing.</p>
+          <span class="duration">Focused sprint</span>
+        </article>
+        <article class="engagement" data-reveal>
+          <span class="number">02</span>
+          <h3>Prototype engagement</h3>
+          <p>Build and test a narrow operational or AI system with the people who will use and govern it.</p>
+          <span class="duration">Time boxed build</span>
+        </article>
+        <article class="engagement" data-reveal>
+          <span class="number">03</span>
+          <h3>Embedded advisory</h3>
+          <p>Support an owner through system design, delivery choices and review as the work moves into practice.</p>
+          <span class="duration">Fractional support</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <div data-reveal>
+          <span class="section-index">08 / Operator led</span>
+          <h2 id="about-title">Built by someone who has carried the operational consequence.</h2>
+        </div>
+        <div class="about-copy" data-reveal>
+          <p>Nadim Najjar leads Orynavo. His work spans telecom operations, asset lifecycle management, process control, system modernization and applied AI.</p>
+          <p>That operator perspective shapes the practice. The work starts with what people are responsible for, follows the evidence they can access and leaves a named person in control of consequential decisions.</p>
+          <a class="text-link" href="https://www.linkedin.com/in/nadim-najjar" rel="me noreferrer">Nadim on LinkedIn</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-inner" data-reveal>
+        <h2 id="contact-title">Bring the decision you cannot keep solving by hand.</h2>
+        <div class="contact-row">
+          <p>Share the process, the decision and what makes it hard. Orynavo will reply directly and tell you whether the problem fits the practice.</p>
+          <a class="button" href="mailto:hello@orynavo.com?subject=Working%20with%20Orynavo">hello@orynavo.com</a>
+        </div>
+      </div>
+    </section>
   </main>
-  <footer class="site-footer"><div class="wrap footer-row"><p>© <span id="year">2026</span> Orynavo. Independent product research.</p><div class="footer-links"><a href="mailto:hello@orynavo.com">hello@orynavo.com</a><a href="privacy.html">Privacy</a><a href="#main">Back to top</a></div></div></footer>
-  <script>document.getElementById('year').textContent=new Date().getFullYear()</script>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <a class="footer-brand" href="#main" aria-label="Back to the top">
+        <img src="/brand/identity/logos/orynavo-horizontal-primary.svg" alt="Orynavo">
+      </a>
+      <div class="footer-meta">
+        <p>© <span id="year">2026</span> Orynavo</p>
+        <a href="privacy.html">Privacy</a>
+        <a href="mailto:hello@orynavo.com">Email</a>
+        <a href="#main">Back to top</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const revealItems = document.querySelectorAll('[data-reveal]');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      revealItems.forEach((item) => observer.observe(item));
+    } else {
+      revealItems.forEach((item) => item.classList.add('revealed'));
+    }
+  </script>
 </body>
 </html>

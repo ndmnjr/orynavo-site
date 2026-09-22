@@ -1,0 +1,517 @@
+{
+  "source_master": "brand/new-logo/Orynavo-logo.svg",
+  "source_sha256": "4d9970445177ae3b7a7d5a3204459b0b82f69b6777d05403b0ddb9edd4adea32",
+  "passed": true,
+  "checks": [
+    {
+      "name": "svg-xml:brand/identity/favicon/favicon.svg",
+      "passed": true,
+      "details": {
+        "width": "321",
+        "height": "321",
+        "viewBox": "0 0 321 321",
+        "role": "img",
+        "aria-labelledby": "title desc"
+      }
+    },
+    {
+      "name": "svg-xml:brand/identity/logos/orynavo-horizontal-black.svg",
+      "passed": true,
+      "details": {
+        "width": "1307",
+        "height": "321",
+        "viewBox": "0 0 1307 321",
+        "role": "img",
+        "aria-labelledby": "title desc"
+      }
+    },
+    {
+      "name": "svg-xml:brand/identity/logos/orynavo-horizontal-dark.svg",
+      "passed": true,
+      "details": {
+        "width": "1307",
+        "height": "321",
+        "viewBox": "0 0 1307 321",
+        "role": "img",
+        "aria-labelledby": "title desc"
+      }
+    },
+    {
+      "name": "svg-xml:brand/identity/logos/orynavo-horizontal-primary.svg",
+      "passed": true,
+      "details": {
+        "width": "1307",
+        "height": "321",
+        "viewBox": "0 0 1307 321",
+        "role": "img",
+        "aria-labelledby": "title desc"
+      }
+    },
+    {
+      "name": "svg-xml:brand/identity/logos/orynavo-horizontal-white.svg",
+      "passed": true,
+      "details": {
+        "width": "1307",
+        "height": "321",
+        "viewBox": "0 0 1307 321",
+        "role": "img",
+        "aria-labelledby": "title desc"
+      }
+    },
+    {
+      "name": "svg-xml:brand/identity/symbol/orynavo-symbol.svg",
+      "passed": true,
+      "details": {
+        "width": "321",
+        "height": "321",
+        "viewBox": "0 0 321 321",
+        "role": "img",
+        "aria-labelledby": "title desc"
+      }
+    },
+    {
+      "name": "locked-geometry:brand/identity/favicon/favicon.svg",
+      "passed": true,
+      "details": {
+        "path_count": 1,
+        "matches_source": true
+      }
+    },
+    {
+      "name": "locked-geometry:brand/identity/logos/orynavo-horizontal-black.svg",
+      "passed": true,
+      "details": {
+        "path_count": 2,
+        "matches_source": true
+      }
+    },
+    {
+      "name": "locked-geometry:brand/identity/logos/orynavo-horizontal-dark.svg",
+      "passed": true,
+      "details": {
+        "path_count": 2,
+        "matches_source": true
+      }
+    },
+    {
+      "name": "locked-geometry:brand/identity/logos/orynavo-horizontal-primary.svg",
+      "passed": true,
+      "details": {
+        "path_count": 2,
+        "matches_source": true
+      }
+    },
+    {
+      "name": "locked-geometry:brand/identity/logos/orynavo-horizontal-white.svg",
+      "passed": true,
+      "details": {
+        "path_count": 2,
+        "matches_source": true
+      }
+    },
+    {
+      "name": "locked-geometry:brand/identity/symbol/orynavo-symbol.svg",
+      "passed": true,
+      "details": {
+        "path_count": 1,
+        "matches_source": true
+      }
+    },
+    {
+      "name": "primary-svg-byte-identical-to-source",
+      "passed": true,
+      "details": {
+        "source": "brand/new-logo/Orynavo-logo.svg"
+      }
+    },
+    {
+      "name": "dimensions:logos/orynavo-horizontal-primary.png",
+      "passed": true,
+      "details": {
+        "actual": [
+          1307,
+          321
+        ],
+        "expected": [
+          1307,
+          321
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "name": "dimensions:logos/orynavo-horizontal-dark.png",
+      "passed": true,
+      "details": {
+        "actual": [
+          1307,
+          321
+        ],
+        "expected": [
+          1307,
+          321
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "name": "dimensions:logos/orynavo-horizontal-black.png",
+      "passed": true,
+      "details": {
+        "actual": [
+          1307,
+          321
+        ],
+        "expected": [
+          1307,
+          321
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "name": "dimensions:logos/orynavo-horizontal-white.png",
+      "passed": true,
+      "details": {
+        "actual": [
+          1307,
+          321
+        ],
+        "expected": [
+          1307,
+          321
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "name": "dimensions:symbol/orynavo-symbol-1024.png",
+      "passed": true,
+      "details": {
+        "actual": [
+          1024,
+          1024
+        ],
+        "expected": [
+          1024,
+          1024
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "name": "dimensions:email/orynavo-email-signature-320x80.png",
+      "passed": true,
+      "details": {
+        "actual": [
+          320,
+          80
+        ],
+        "expected": [
+          320,
+          80
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "name": "dimensions:social/apple-touch-icon-180.png",
+      "passed": true,
+      "details": {
+        "actual": [
+          180,
+          180
+        ],
+        "expected": [
+          180,
+          180
+        ],
+        "mode": "RGBA"
+      }
+    },
+    {
+      "name": "dimensions:social/open-graph-1200x630.png",
+      "passed": true,
+      "details": {
+        "actual": [
+          1200,
+          630
+        ],
+        "expected": [
+          1200,
+          630
+        ],
+        "mode": "RGB"
+      }
+    },
+    {
+      "name": "dimensions:social/youtube-avatar-800x800.png",
+      "passed": true,
+      "details": {
+        "actual": [
+          800,
+          800
+        ],
+        "expected": [
+          800,
+          800
+        ],
+        "mode": "RGB"
+      }
+    },
+    {
+      "name": "dimensions:social/youtube-banner-2560x1440.png",
+      "passed": true,
+      "details": {
+        "actual": [
+          2560,
+          1440
+        ],
+        "expected": [
+          2560,
+          1440
+        ],
+        "mode": "RGB"
+      }
+    },
+    {
+      "name": "dimensions:review/orynavo-identity-contact-sheet.png",
+      "passed": true,
+      "details": {
+        "actual": [
+          1800,
+          1880
+        ],
+        "expected": [
+          1800,
+          1880
+        ],
+        "mode": "RGB"
+      }
+    },
+    {
+      "name": "transparency:logos/orynavo-horizontal-primary.png",
+      "passed": true,
+      "details": {
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "name": "transparency:logos/orynavo-horizontal-dark.png",
+      "passed": true,
+      "details": {
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "name": "transparency:logos/orynavo-horizontal-black.png",
+      "passed": true,
+      "details": {
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "name": "transparency:logos/orynavo-horizontal-white.png",
+      "passed": true,
+      "details": {
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "name": "transparency:symbol/orynavo-symbol-1024.png",
+      "passed": true,
+      "details": {
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "name": "transparency:email/orynavo-email-signature-320x80.png",
+      "passed": true,
+      "details": {
+        "alpha_extrema": [
+          0,
+          255
+        ]
+      }
+    },
+    {
+      "name": "favicon-container",
+      "passed": true,
+      "details": {
+        "reserved": 0,
+        "type": 1,
+        "count": 4,
+        "entries": [
+          {
+            "width": 16,
+            "height": 16,
+            "planes": 1,
+            "bits_per_pixel": 32,
+            "png_compressed": true
+          },
+          {
+            "width": 32,
+            "height": 32,
+            "planes": 1,
+            "bits_per_pixel": 32,
+            "png_compressed": true
+          },
+          {
+            "width": 48,
+            "height": 48,
+            "planes": 1,
+            "bits_per_pixel": 32,
+            "png_compressed": true
+          },
+          {
+            "width": 64,
+            "height": 64,
+            "planes": 1,
+            "bits_per_pixel": 32,
+            "png_compressed": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "favicon-sizes",
+      "passed": true,
+      "details": [
+        [
+          16,
+          16
+        ],
+        [
+          32,
+          32
+        ],
+        [
+          48,
+          48
+        ],
+        [
+          64,
+          64
+        ]
+      ]
+    },
+    {
+      "name": "favicon-png-entries",
+      "passed": true,
+      "details": [
+        {
+          "width": 16,
+          "height": 16,
+          "planes": 1,
+          "bits_per_pixel": 32,
+          "png_compressed": true
+        },
+        {
+          "width": 32,
+          "height": 32,
+          "planes": 1,
+          "bits_per_pixel": 32,
+          "png_compressed": true
+        },
+        {
+          "width": 48,
+          "height": 48,
+          "planes": 1,
+          "bits_per_pixel": 32,
+          "png_compressed": true
+        },
+        {
+          "width": 64,
+          "height": 64,
+          "planes": 1,
+          "bits_per_pixel": 32,
+          "png_compressed": true
+        }
+      ]
+    },
+    {
+      "name": "contrast-aa",
+      "passed": true,
+      "details": {
+        "charcoal-on-paper": 16.72,
+        "muted-on-paper": 5.98,
+        "charcoal-on-terracotta": 4.73,
+        "paper-on-charcoal": 16.72,
+        "soft-on-charcoal": 14.73
+      }
+    },
+    {
+      "name": "youtube-safe-area",
+      "passed": true,
+      "details": {
+        "safe_area": [
+          507,
+          509,
+          2053,
+          932
+        ],
+        "content_bounds": [
+          810,
+          564,
+          1750,
+          890
+        ]
+      }
+    },
+    {
+      "name": "published-alias:favicon.ico",
+      "passed": true,
+      "details": {
+        "source": "brand/identity/favicon/favicon.ico",
+        "destination": "favicon.ico"
+      }
+    },
+    {
+      "name": "published-alias:favicon.svg",
+      "passed": true,
+      "details": {
+        "source": "brand/identity/favicon/favicon.svg",
+        "destination": "favicon.svg"
+      }
+    },
+    {
+      "name": "published-alias:apple-touch-icon.png",
+      "passed": true,
+      "details": {
+        "source": "brand/identity/social/apple-touch-icon-180.png",
+        "destination": "apple-touch-icon.png"
+      }
+    },
+    {
+      "name": "published-alias:og-image.png",
+      "passed": true,
+      "details": {
+        "source": "brand/identity/social/open-graph-1200x630.png",
+        "destination": "og-image.png"
+      }
+    },
+    {
+      "name": "published-alias:email-signature-logo.png",
+      "passed": true,
+      "details": {
+        "source": "brand/identity/email/orynavo-email-signature-320x80.png",
+        "destination": "email-signature-logo.png"
+      }
+    }
+  ]
+}

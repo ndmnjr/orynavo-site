@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import base64
+import os
 import sys
 from pathlib import Path
 
@@ -10,7 +11,9 @@ from selenium.webdriver.chrome.options import Options
 
 ROOT = Path(__file__).parent.resolve()
 OUT = ROOT / "screenshots"
-BASE_URL = "http://127.0.0.1:4173/"
+BASE_URL = os.environ.get("ORYNAVO_BASE_URL", "http://127.0.0.1:4173/")
+if not BASE_URL.endswith("/"):
+    BASE_URL += "/"
 PAGES = (("home", ""), ("privacy", "privacy.html"), ("404", "404.html"), ("photonbid", "photonbid/"))
 VIEWPORTS = (("desktop", 1440, 1000), ("mobile-390", 390, 844))
 
@@ -46,6 +49,10 @@ def main() -> int:
                         "screenHeight": height,
                     },
                 )
+                driver.execute_cdp_cmd(
+                    "Emulation.setEmulatedMedia",
+                    {"features": [{"name": "prefers-reduced-motion", "value": "reduce"}]},
+                )
                 driver.get(BASE_URL + path)
                 actual_width = driver.execute_script("return window.innerWidth")
                 scroll_width = driver.execute_script("return document.documentElement.scrollWidth")
@@ -53,6 +60,9 @@ def main() -> int:
                 title = driver.title
                 h1 = driver.find_element("css selector", "h1").text
                 full_height = driver.execute_script("return document.documentElement.scrollHeight")
+                hidden_reveals = driver.execute_script(
+                    "return [...document.querySelectorAll('[data-reveal]')].filter(el => getComputedStyle(el).opacity === '0').length"
+                )
                 screenshot = OUT / f"{name}.png"
                 image = driver.execute_cdp_cmd(
                     "Page.captureScreenshot",
@@ -90,11 +100,11 @@ def main() -> int:
                         and video_state["source"].startswith(BASE_URL)
                     )
                     video_detail = f" video={video_state}"
-                ok = actual_width == width and not overflow and bool(h1) and "Orynavo" in title and not console_errors and video_ok
+                ok = actual_width == width and not overflow and bool(h1) and "Orynavo" in title and not console_errors and not hidden_reveals and video_ok
                 print(
                     f"{'PASS' if ok else 'FAIL'}: {name} "
                     f"viewport={actual_width} clientWidth={client_width} scrollWidth={scroll_width} "
-                    f"height={full_height} overflow={overflow} consoleErrors={len(console_errors)} "
+                    f"height={full_height} overflow={overflow} hiddenReveals={hidden_reveals} consoleErrors={len(console_errors)} "
                     f"screenshot={screenshot}{video_detail}"
                 )
                 for error in console_errors:
