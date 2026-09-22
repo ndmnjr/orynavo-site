@@ -2,7 +2,7 @@
 
 Live site: https://orynavo.com/
 
-A production-ready, static credibility site for Orynavo: an evidence-led umbrella for small, owner-light digital products.
+A production-ready static site for Orynavo, an operator-led applied AI and operations consultancy.
 
 ## Files
 
@@ -10,10 +10,15 @@ A production-ready, static credibility site for Orynavo: an evidence-led umbrell
 - `privacy.html` — plain-language privacy notice
 - `404.html` — custom not-found page
 - `favicon.ico` — multi-size browser icon (16, 32, 48, and 64px)
+- `favicon.svg` and `apple-touch-icon.png` — modern browser and device icons
+- `og-image.png` — 1200×630px Open Graph sharing image
 - `email-signature-logo.png` — transparent 320×80px logo for 2× email rendering
+- `brand/new-logo/Orynavo-logo.svg` — approved source artwork
+- `brand/identity/` — generated identity system, usage guide, validation report, and integrity manifest
+- `DESIGN.md` — machine-readable brand tokens and usage guidance
 - `.gitignore` — local tooling exclusions
 
-All CSS and JavaScript are embedded. Brand and open-graph artwork is hosted from the site root. There is no build step, dependency, tracking script, or external font request.
+All CSS and JavaScript are embedded. Brand and Open Graph artwork is hosted from the site root. The public site has no runtime build step, tracking script, or external font request.
 
 ## Email signature logo
 
@@ -37,13 +42,15 @@ Then open `http://127.0.0.1:4173/`.
 
 ## Quality checks
 
-Run the deterministic checker:
+Regenerate and validate the identity, lint the design specification, then run the deterministic site checker:
 
 ```bash
+python brand/identity/tools/generate_identity.py
+npx -y -p @google/design.md designmd lint DESIGN.md
 python verify_site.py
 ```
 
-The checker validates required files, document metadata and landmarks, local links and fragment targets, image alternatives, HTTPS external links, required messages, reduced-motion CSS, the physical ICO structure and sizes, and the signature PNG dimensions.
+The identity generator creates all derivatives and root aliases from the approved SVG source. The site checker validates required files, document metadata and landmarks, local links and fragment targets, image alternatives, HTTPS external links, required consultancy positioning, reduced-motion CSS, root asset integrity, the physical ICO structure and sizes, and the signature PNG dimensions.
 
 With the local server running, use Chrome to check horizontal overflow and capture full-page screenshots at desktop and 390px widths:
 

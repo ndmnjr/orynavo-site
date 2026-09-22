@@ -12,7 +12,12 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).parent.resolve()
 REQUIRED = {
     "index.html", "privacy.html", "404.html", "README.md", ".gitignore",
-    "CNAME", "og-image.png", "favicon.ico", "email-signature-logo.png",
+    "CNAME", "og-image.png", "favicon.ico", "favicon.svg",
+    "apple-touch-icon.png", "email-signature-logo.png", "DESIGN.md",
+    "brand/new-logo/Orynavo-logo.svg",
+    "brand/identity/tools/generate_identity.py",
+    "brand/identity/validation-report.json",
+    "brand/identity/manifest-sha256.txt",
     "photonbid/index.html",
     "photonbid/assets/photonbid-logo.svg",
     "photonbid/assets/photonbid-explainer.mp4",
@@ -179,8 +184,12 @@ def main() -> int:
         check(parser.titles == 1, f"{page_name}: exactly one title", failures)
         check(parser.descriptions == 1, f"{page_name}: meta description", failures)
         check(parser.og_titles == 1 and parser.og_descriptions == 1, f"{page_name}: Open Graph title and description", failures)
-        expected_favicon = {"rel": "icon", "type": "image/x-icon", "href": "/favicon.ico"}
-        check(parser.favicons == [expected_favicon], f"{page_name}: explicit /favicon.ico reference", failures)
+        expected_icons = [
+            {"rel": "icon", "type": "image/x-icon", "href": "/favicon.ico"},
+            {"rel": "icon", "type": "image/svg+xml", "href": "/favicon.svg"},
+            {"rel": "apple-touch-icon", "href": "/apple-touch-icon.png"},
+        ]
+        check(parser.favicons == expected_icons, f"{page_name}: ICO, SVG, and Apple touch icons", failures)
         check(parser.h1s == 1, f"{page_name}: exactly one h1", failures)
         check(parser.mains == 1, f"{page_name}: main landmark", failures)
         if page_name == "photonbid/index.html":
@@ -215,15 +224,19 @@ def main() -> int:
             else:
                 local_name = local_name or source.name
                 target = (source.parent / local_name).resolve()
+            if target.is_dir():
+                target = target / "index.html"
             check(target.is_file(), f"{source.name}: local link target exists ({href})", failures)
             if target in parsed and parts.fragment:
                 check(parts.fragment in parsed[target].ids, f"{source.name}: fragment target exists ({href})", failures)
 
     index = contents[ROOT / "index.html"].lower()
     required_phrases = [
-        "small digital products for", "real, repeated problems", "find a repeated problem",
-        "worth paying to solve", "smallest useful version", "keep operations light",
-        "early research", "successful run", "n8n", "no guarantee"
+        "applied ai and operations consultancy", "operational complexity",
+        "decisions your team can trust", "applied ai and agents",
+        "operational and decision systems", "telecom and asset lifecycle insight",
+        "validation and prototyping", "proof before scale",
+        "research project, not a released product", "guaranteed outcomes"
     ]
     for phrase in required_phrases:
         check(phrase in index, f"index.html: required message present ({phrase})", failures)
@@ -268,6 +281,20 @@ def main() -> int:
         )
     except (OSError, ValueError, struct.error, zlib.error) as error:
         check(False, f"email-signature-logo.png: physically valid ({error})", failures)
+
+    public_aliases = {
+        "favicon.ico": "brand/identity/favicon/favicon.ico",
+        "favicon.svg": "brand/identity/favicon/favicon.svg",
+        "apple-touch-icon.png": "brand/identity/social/apple-touch-icon-180.png",
+        "og-image.png": "brand/identity/social/open-graph-1200x630.png",
+        "email-signature-logo.png": "brand/identity/email/orynavo-email-signature-320x80.png",
+    }
+    for public_name, identity_name in public_aliases.items():
+        check(
+            (ROOT / public_name).read_bytes() == (ROOT / identity_name).read_bytes(),
+            f"{public_name}: matches generated identity asset ({identity_name})",
+            failures,
+        )
 
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     check("https://orynavo.com/email-signature-logo.png" in readme, "README.md: hosted signature asset URL", failures)
