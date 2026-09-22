@@ -1,0 +1,7 @@
+*.html text eol=lf
+*.md text eol=lf
+*.py text eol=lf
+*.svg text eol=lf
+*.json text eol=lf
+*.txt text eol=lf
+CNAME text eol=lf

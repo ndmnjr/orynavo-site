@@ -18,6 +18,7 @@ REQUIRED = {
     "brand/identity/tools/generate_identity.py",
     "brand/identity/validation-report.json",
     "brand/identity/manifest-sha256.txt",
+    "brand/identity/social/youtube-watermark-150.png",
     "photonbid/index.html",
     "photonbid/assets/photonbid-logo.svg",
     "photonbid/assets/photonbid-explainer.mp4",

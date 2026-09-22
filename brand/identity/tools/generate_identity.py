@@ -111,6 +111,10 @@ symbol_1024 = render_svg(sym_svg, 1024, 1024)
 save_png(symbol_1024, IDENTITY / "symbol" / "orynavo-symbol-1024.png")
 (IDENTITY / "favicon" / "favicon.svg").write_text(sym_svg, encoding="utf-8")
 
+# YouTube watermark: transparent symbol at the platform's recommended size.
+youtube_watermark = symbol_1024.resize((150, 150), Image.Resampling.LANCZOS)
+save_png(youtube_watermark, IDENTITY / "social" / "youtube-watermark-150.png")
+
 # Pixel-size favicon sources and a PNG-compressed multi-entry ICO.
 favicon_pngs = {}
 for size in (16, 32, 48, 64):
@@ -297,6 +301,7 @@ expected = {
     "social/open-graph-1200x630.png": (1200, 630),
     "social/youtube-avatar-800x800.png": (800, 800),
     "social/youtube-banner-2560x1440.png": (2560, 1440),
+    "social/youtube-watermark-150.png": (150, 150),
     "review/orynavo-identity-contact-sheet.png": (1800, 1880),
 }
 for rel, dims in expected.items():
@@ -310,6 +315,7 @@ for rel in (
     "logos/orynavo-horizontal-white.png",
     "symbol/orynavo-symbol-1024.png",
     "email/orynavo-email-signature-320x80.png",
+    "social/youtube-watermark-150.png",
 ):
     with Image.open(IDENTITY / rel) as im:
         alpha = im.getchannel("A") if "A" in im.getbands() else None
@@ -331,6 +337,8 @@ ratios = {
 }
 add("contrast-aa", all(v >= 4.5 for v in ratios.values()), {k: round(v, 2) for k, v in ratios.items()})
 add("youtube-safe-area", 810 >= 507 and 1750 <= 2053 and 564 >= 509 and 890 <= 932, {"safe_area": [507, 509, 2053, 932], "content_bounds": [810, 564, 1750, 890]})
+watermark_size = (IDENTITY / "social" / "youtube-watermark-150.png").stat().st_size
+add("youtube-watermark-filesize", watermark_size < 1_000_000, {"bytes": watermark_size, "maximum_bytes": 1_000_000})
 for source, destination in published_assets.items():
     add(
         f"published-alias:{destination.name}",
@@ -348,7 +356,13 @@ report_path = IDENTITY / "validation-report.json"
 report_path.write_text(json.dumps(report, indent=2) + "\n", encoding="utf-8")
 
 hash_targets = sorted(
-    [p for p in IDENTITY.rglob("*") if p.is_file() and p.name != "manifest-sha256.txt"]
+    [
+        p for p in IDENTITY.rglob("*")
+        if p.is_file()
+        and p.name != "manifest-sha256.txt"
+        and "__pycache__" not in p.parts
+        and p.suffix != ".pyc"
+    ]
     + [DESIGN, SOURCE]
     + list(published_assets.values()),
     key=lambda p: p.as_posix().lower(),
