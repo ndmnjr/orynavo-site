@@ -15,7 +15,12 @@ BASE_URL = os.environ.get("ORYNAVO_BASE_URL", "http://127.0.0.1:4173/")
 if not BASE_URL.endswith("/"):
     BASE_URL += "/"
 PAGES = (("home", ""), ("privacy", "privacy.html"), ("404", "404.html"), ("photonbid", "photonbid/"))
-VIEWPORTS = (("desktop", 1440, 1000), ("mobile-390", 390, 844))
+VIEWPORTS = (
+    ("desktop", 1440, 1000),
+    ("tablet-768", 768, 1024),
+    ("mobile-390", 390, 844),
+    ("mobile-320", 320, 720),
+)
 
 
 def driver_for(width: int, height: int) -> webdriver.Chrome:
@@ -74,6 +79,23 @@ def main() -> int:
                     entry for entry in driver.get_log("browser")
                     if entry["level"] == "SEVERE"
                 ]
+                small_targets = driver.execute_script(
+                    """return [...document.querySelectorAll('a, button, input, select, textarea')]
+                    .filter(el => {
+                        const r = el.getBoundingClientRect();
+                        const s = getComputedStyle(el);
+                        const visible = s.display !== 'none' && s.visibility !== 'hidden' &&
+                            r.width > 0 && r.height > 0;
+                        return visible && (r.width < 44 || r.height < 44);
+                    }).map(el => ({tag: el.tagName, text: (el.innerText || el.getAttribute('aria-label') || '').trim(),
+                        width: Math.round(el.getBoundingClientRect().width), height: Math.round(el.getBoundingClientRect().height)}));"""
+                )
+                semantic_ok = page_name != "photonbid" or driver.execute_script(
+                    """return document.querySelectorAll('main').length === 1 &&
+                        document.querySelectorAll('h1').length === 1 &&
+                        !!document.querySelector('a[href="#main"]') &&
+                        [...document.images].every(img => img.hasAttribute('alt'));"""
+                )
                 video_ok = True
                 video_detail = ""
                 if page_name == "photonbid":
@@ -100,15 +122,19 @@ def main() -> int:
                         and video_state["source"].startswith(BASE_URL)
                     )
                     video_detail = f" video={video_state}"
-                ok = actual_width == width and not overflow and bool(h1) and "Orynavo" in title and not console_errors and not hidden_reveals and video_ok
+                target_ok = page_name != "photonbid" or not small_targets
+                ok = actual_width == width and not overflow and bool(h1) and "Orynavo" in title and not console_errors and not hidden_reveals and video_ok and semantic_ok and target_ok
                 print(
                     f"{'PASS' if ok else 'FAIL'}: {name} "
                     f"viewport={actual_width} clientWidth={client_width} scrollWidth={scroll_width} "
                     f"height={full_height} overflow={overflow} hiddenReveals={hidden_reveals} consoleErrors={len(console_errors)} "
+                    f"semantic={semantic_ok} smallTargets={len(small_targets)} "
                     f"screenshot={screenshot}{video_detail}"
                 )
                 for error in console_errors:
                     print(f"  CONSOLE: {error['message']}")
+                for target in small_targets if page_name == "photonbid" else []:
+                    print(f"  TARGET: {target}")
                 if not ok:
                     failures.append(name)
             finally:

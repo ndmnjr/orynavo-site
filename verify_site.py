@@ -248,11 +248,23 @@ def main() -> int:
 
     photonbid = contents[ROOT / "photonbid/index.html"].lower()
     for phrase in (
-        "official european tenders", "actual catalogue", "quoted evidence",
-        "possible product match", "disqualifying requirements",
-        "official notice always takes precedence",
+        "ai opportunity screening for specialist suppliers",
+        "live public opportunities", "what your company can sell, support and deliver",
+        "source evidence", "likely catalogue fit", "important unknowns and deal breakers",
+        "deal-size limits", "distributor territories", "no-bid rules",
+        "confidence score is a triage score", "not a literal percentage fit",
+        "your team makes the bid or no-bid decision",
+        "official notice always takes precedence", "early validation",
+        "request a sample match",
     ):
         check(phrase in photonbid, f"photonbid/index.html: required message present ({phrase})", failures)
+    check("mailto:research@orynavo.com" in photonbid, "photonbid/index.html: approved research mailbox is published", failures)
+    check("<form" not in photonbid, "photonbid/index.html: no form collection", failures)
+    for forbidden_claim in (
+        "our customers", "paid pilot", "proven savings", "comprehensive coverage",
+        "production ready", "guaranteed opportunity detection",
+    ):
+        check(forbidden_claim not in photonbid, f"photonbid/index.html: prohibited claim absent ({forbidden_claim})", failures)
     check("<video" in photonbid and " controls" in photonbid, "photonbid/index.html: accessible video controls present", failures)
     check(not re.search(r"<video[^>]*\sautoplay(?:\s|=|>)", photonbid), "photonbid/index.html: video does not autoplay", failures)
     check('preload="metadata"' in photonbid and "playsinline" in photonbid, "photonbid/index.html: restrained video loading and inline playback", failures)
