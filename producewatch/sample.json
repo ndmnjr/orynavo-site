@@ -1,0 +1,203 @@
+{
+  "title": "ProduceWatch by Orynavo",
+  "kind": "historical_sample_not_live_feed",
+  "customer_configured": false,
+  "integration": null,
+  "report_dates": [
+    "2026-10-01",
+    "2026-10-02"
+  ],
+  "market": "Baltimore terminal wholesale",
+  "sources": [
+    {
+      "id": "USDA_AMS_BP_FV020",
+      "publisher": "USDA AMS",
+      "url": "https://www.ams.usda.gov/mnreports/bp_fv020.pdf",
+      "link_type": "rolling_current_report_not_archive",
+      "observations": [
+        {
+          "report_date": "2026-10-01",
+          "retrieved_at_utc": "2026-10-02T05:33:30Z",
+          "publication_time": null
+        },
+        {
+          "report_date": "2026-10-02",
+          "retrieved_at_utc": "2026-10-03T05:31:45Z",
+          "publication_time": null
+        }
+      ]
+    }
+  ],
+  "method": "Full reported range midpoint = (low + high) / 2. Change = October 2 midpoint minus October 1 midpoint. Percent = change / October 1 midpoint x 100, rounded half up to one decimal. No unit conversion. Midpoints are calculations, not transaction averages.",
+  "limits": "Public wholesale benchmark, not your delivered price. Four selected source series, not a customer watchlist. Organic status is not reported. Missing fields remain unknown. No customer match, source freshness guarantee or supplier recommendation. Integration and delivery contracts are not established by this file.",
+  "items": [
+    {
+      "id": "cauliflower",
+      "label": "White cauliflower",
+      "specification": {
+        "commodity": "CAULIFLOWER",
+        "pack": "cartons film wrapped",
+        "size": "12s",
+        "origin": "CANADA QUEBEC",
+        "variety": "White",
+        "production": "not reported",
+        "grade": "CD ONE",
+        "organic_status": "not reported",
+        "market": "Baltimore terminal wholesale",
+        "unit": "USD per reported package"
+      },
+      "prior": {
+        "report_date": "2026-10-01",
+        "range_usd": [
+          "39.00",
+          "39.00"
+        ],
+        "source_id": "USDA_AMS_BP_FV020",
+        "source_page": 2
+      },
+      "latest": {
+        "report_date": "2026-10-02",
+        "range_usd": [
+          "35.00",
+          "35.00"
+        ],
+        "source_id": "USDA_AMS_BP_FV020",
+        "source_page": 2
+      },
+      "calculation": {
+        "prior_midpoint_usd": "39.00",
+        "latest_midpoint_usd": "35.00",
+        "change_usd": "-4.00",
+        "change_percent": "-10.3"
+      },
+      "status": "matched_source_specification_not_customer_match",
+      "customer_match": null
+    },
+    {
+      "id": "carrots",
+      "label": "Jumbo carrots",
+      "specification": {
+        "commodity": "CARROTS",
+        "pack": "50 lb sacks loose",
+        "size": "jumbo",
+        "origin": "CANADA QUEBEC",
+        "variety": "not reported",
+        "production": "not reported",
+        "grade": "CD ONE",
+        "organic_status": "not reported",
+        "market": "Baltimore terminal wholesale",
+        "unit": "USD per reported package"
+      },
+      "prior": {
+        "report_date": "2026-10-01",
+        "range_usd": [
+          "15.00",
+          "17.00"
+        ],
+        "source_id": "USDA_AMS_BP_FV020",
+        "source_page": 2
+      },
+      "latest": {
+        "report_date": "2026-10-02",
+        "range_usd": [
+          "14.00",
+          "16.00"
+        ],
+        "source_id": "USDA_AMS_BP_FV020",
+        "source_page": 2
+      },
+      "calculation": {
+        "prior_midpoint_usd": "16.00",
+        "latest_midpoint_usd": "15.00",
+        "change_usd": "-1.00",
+        "change_percent": "-6.3"
+      },
+      "status": "matched_source_specification_not_customer_match",
+      "customer_match": null
+    },
+    {
+      "id": "beets",
+      "label": "Red beets",
+      "specification": {
+        "commodity": "BEETS",
+        "pack": "25 lb film bags",
+        "size": "medium",
+        "origin": "CANADA QUEBEC",
+        "variety": "RED TYPE",
+        "production": "not reported",
+        "grade": "CD ONE",
+        "organic_status": "not reported",
+        "market": "Baltimore terminal wholesale",
+        "unit": "USD per reported package"
+      },
+      "prior": {
+        "report_date": "2026-10-01",
+        "range_usd": [
+          "14.00",
+          "16.00"
+        ],
+        "source_id": "USDA_AMS_BP_FV020",
+        "source_page": 2
+      },
+      "latest": {
+        "report_date": "2026-10-02",
+        "range_usd": [
+          "14.00",
+          "16.00"
+        ],
+        "source_id": "USDA_AMS_BP_FV020",
+        "source_page": 2
+      },
+      "calculation": {
+        "prior_midpoint_usd": "15.00",
+        "latest_midpoint_usd": "15.00",
+        "change_usd": "0.00",
+        "change_percent": "0.0"
+      },
+      "status": "matched_source_specification_not_customer_match",
+      "customer_match": null
+    },
+    {
+      "id": "cucumbers",
+      "label": "Long seedless cucumbers",
+      "specification": {
+        "commodity": "CUCUMBERS",
+        "pack": "cartons film wrapped",
+        "size": "12s small",
+        "origin": "CANADA ONTARIO",
+        "variety": "LONG SEEDLESS",
+        "production": "greenhouse",
+        "grade": "CD ONE",
+        "organic_status": "not reported",
+        "market": "Baltimore terminal wholesale",
+        "unit": "USD per reported package"
+      },
+      "prior": {
+        "report_date": "2026-10-01",
+        "range_usd": [
+          "15.00",
+          "15.00"
+        ],
+        "source_id": "USDA_AMS_BP_FV020",
+        "source_page": 2
+      },
+      "latest": {
+        "report_date": "2026-10-02",
+        "range_usd": [
+          "15.00",
+          "15.00"
+        ],
+        "source_id": "USDA_AMS_BP_FV020",
+        "source_page": 2
+      },
+      "calculation": {
+        "prior_midpoint_usd": "15.00",
+        "latest_midpoint_usd": "15.00",
+        "change_usd": "0.00",
+        "change_percent": "0.0"
+      },
+      "status": "matched_source_specification_not_customer_match",
+      "customer_match": null
+    }
+  ]
+}
