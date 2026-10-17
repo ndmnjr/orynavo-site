@@ -1,6 +1,12 @@
 /* PhotonBid first-party aggregate counters; no cookies or visitor identifiers. */
 (() => {
-  if (!['/photonbid/', '/photonbid/index.html'].includes(location.pathname) ||
+  const routes = new Map([
+    ['/photonbid/', 'en'], ['/photonbid/index.html', 'en'],
+    ['/photonbid/fr/', 'fr'], ['/photonbid/fr/index.html', 'fr'],
+    ['/photonbid/de/', 'de'], ['/photonbid/de/index.html', 'de']
+  ]);
+  const lang = routes.get(location.pathname);
+  if (!lang ||
       navigator.doNotTrack === '1' || navigator.globalPrivacyControl === true) return;
   const allowed = new Set(['pageview', 'sample_request_click', 'profile_cta_click',
     'profile_section_click', 'report_click', 'video_start', 'video_complete', 'video_link_click']);
@@ -11,7 +17,7 @@
     sent.add(event);
     fetch('https://control.orynavo.com/photonbid/events', {
       method: 'POST', headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({event, test: document.documentElement.dataset.photonbidAnalyticsTest === 'true'}),
+      body: JSON.stringify({event, lang, test: document.documentElement.dataset.photonbidAnalyticsTest === 'true'}),
       credentials: 'omit', referrerPolicy: 'no-referrer', cache: 'no-store', keepalive: true
     }).catch(() => {});
   };

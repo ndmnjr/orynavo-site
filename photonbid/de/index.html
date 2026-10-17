@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<meta content="PhotonBid hilft spezialisierten Anbietern, aktuelle öffentliche Ausschreibungen nach ihren Verkaufs-, Service- und Liefermöglichkeiten vorzuprüfen, und erläutert, welche Aufträge eine menschliche Prüfung verdienen." name="description"/>
+<meta content="website" property="og:type"/>
+<meta content="PhotonBid von Orynavo | Öffentliche Ausschreibungen mit Ihrem Anbieterprofil abgleichen" property="og:title"/>
+<meta content="Weniger irrelevante Ausschreibungstreffer durch Quellenbelege, voraussichtliche Katalogpassung, wichtige offene Fragen und Ausschlusskriterien. Ihr Team entscheidet über die Angebotsabgabe." property="og:description"/>
+<meta content="https://orynavo.com/photonbid/de/" property="og:url"/>
+<meta content="https://orynavo.com/og-image.png" property="og:image"/>
+<meta content="Orynavo" property="og:image:alt"/>
+<link href="https://orynavo.com/photonbid/de/" rel="canonical"/>
+<title>PhotonBid von Orynavo | KI-gestützte Chancenprüfung für spezialisierte Anbieter</title>
+<link href="/favicon.ico" rel="icon" type="image/x-icon"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon"/>
+<style>
+    :root {
+      --paper: #f5f4ed;
+      --ink: #141413;
+      --clay: #c96442;
+      --clay-dark: #a94d30;
+      --muted: #5e5d59;
+      --line: #d8d5ca;
+      --soft: #e8e6dc;
+      --ivory: #faf9f5;
+      --display: Georgia, "Times New Roman", serif;
+      --sans: Inter, "Aptos", "Segoe UI", Arial, sans-serif;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      overflow-wrap: break-word;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    a:focus-visible, video:focus-visible {
+      outline: 3px solid var(--clay-dark);
+      outline-offset: 4px;
+    }
+    .skip-link {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+      padding: 11px 15px;
+      background: var(--ink);
+      color: var(--paper);
+      transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+    .wrap { width: min(calc(100% - 48px), var(--max)); margin-inline: auto; }
+
+    header { border-bottom: 1px solid var(--line); }
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .wordmark { display: flex; align-items: center; }
+    .wordmark img { display: block; width: 188px; height: auto; }
+    .status {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .status::before {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--clay);
+      content: "";
+      flex: 0 0 auto;
+    }
+
+    h1, h2, h3 { font-family: var(--display); font-weight: 500; }
+    .eyebrow, .section-label {
+      margin: 0;
+      color: var(--clay-dark);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(340px, .72fr);
+      gap: clamp(54px, 8vw, 108px);
+      align-items: center;
+      min-height: 700px;
+      padding-block: 82px 94px;
+    }
+    h1 {
+      max-width: 810px;
+      margin: 20px 0 0;
+      font-size: clamp(56px, 6.8vw, 94px);
+      line-height: .96;
+      letter-spacing: -.05em;
+      text-wrap: balance;
+    }
+    .hero-copy {
+      max-width: 700px;
+      margin: 30px 0 0;
+      color: #403f3a;
+      font-size: clamp(19px, 1.8vw, 22px);
+      line-height: 1.5;
+      text-wrap: pretty;
+    }
+    .hero-note { max-width: 640px; margin: 18px 0 0; color: var(--muted); font-size: 15px; }
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 14px 24px;
+      margin-top: 34px;
+    }
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 19px;
+      border: 1px solid var(--ink);
+      border-radius: 9px;
+      background: var(--ink);
+      color: var(--paper);
+      font-size: 15px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+    }
+    .button:hover { border-color: var(--clay); background: var(--clay); color: var(--ink); }
+    .text-link {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 700;
+      text-underline-offset: 4px;
+    }
+    .text-link:hover { color: var(--clay-dark); }
+
+    .screening-note {
+      position: relative;
+      padding: 26px 26px 24px;
+      border: 1px solid var(--ink);
+      border-radius: 18px;
+      background: var(--ivory);
+      box-shadow: 12px 12px 0 var(--clay);
+    }
+    .screening-note::before {
+      position: absolute;
+      top: -37px;
+      right: 0;
+      color: var(--muted);
+      content: "ILLUSTRATIVE PRÜFÜBERSICHT";
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .11em;
+    }
+    .brief-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .priority { color: var(--clay-dark); }
+    .screening-note h2 {
+      margin: 21px 0 20px;
+      font-size: 33px;
+      line-height: 1.08;
+      letter-spacing: -.025em;
+    }
+    .brief-row {
+      display: grid;
+      grid-template-columns: 88px 1fr;
+      gap: 14px;
+      padding: 13px 0;
+      border-top: 1px solid var(--line);
+      font-size: 14px;
+    }
+    .brief-row dt {
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .brief-row dd { margin: 0; }
+    .source-chip {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      margin-top: 14px;
+      padding: 7px 10px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .section { border-top: 1px solid var(--line); }
+    .section-grid, .inverse-grid {
+      display: grid;
+      grid-template-columns: .62fr 1.38fr;
+      gap: clamp(48px, 8vw, 118px);
+      padding-block: 104px;
+    }
+    .section h2, .inverse h2, .video-intro h2 {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(42px, 5.2vw, 70px);
+      line-height: 1.02;
+      letter-spacing: -.045em;
+      text-wrap: balance;
+    }
+    .lead { max-width: 720px; margin: 24px 0 0; color: var(--muted); font-size: 19px; }
+
+    .profile-list { margin: 48px 0 0; padding: 0; border-bottom: 1px solid var(--line); list-style: none; }
+    .profile-list li {
+      display: grid;
+      grid-template-columns: minmax(150px, .48fr) 1fr;
+      gap: 26px;
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+    .profile-list strong { font-family: var(--display); font-size: 23px; font-weight: 500; line-height: 1.25; }
+    .profile-list span { color: var(--muted); }
+
+    .inverse { background: var(--ink); color: var(--paper); }
+    .inverse .section-label { color: #d98a70; }
+    .inverse .lead { color: var(--soft); }
+    .review-list { margin: 42px 0 0; padding: 0; list-style: none; counter-reset: review; }
+    .review-list li {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 18px;
+      padding: 22px 0 24px;
+      border-top: 1px solid #3e3d38;
+      counter-increment: review;
+    }
+    .review-list li::before {
+      color: #d98a70;
+      content: "0" counter(review);
+      font-family: var(--display);
+      font-size: 18px;
+    }
+    .review-list h3 { margin: 0 0 6px; font-size: 25px; }
+    .review-list p { max-width: 670px; margin: 0; color: #dedbd0; }
+    .score-note {
+      margin-top: 28px;
+      padding: 18px 20px;
+      border: 1px solid #514f48;
+      border-radius: 9px;
+      color: #dedbd0;
+      font-size: 15px;
+    }
+    .score-note strong { color: var(--paper); }
+
+    .video-story { padding-block: 104px 112px; border-top: 1px solid var(--line); background: var(--soft); }
+    .video-intro {
+      display: grid;
+      grid-template-columns: .62fr 1.38fr;
+      gap: clamp(48px, 8vw, 118px);
+      align-items: start;
+      margin-bottom: 44px;
+    }
+    .video-intro .lead { margin-top: 20px; }
+    .video-shell video {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--ink);
+      border-radius: 9px;
+      background: var(--ink);
+      box-shadow: 12px 12px 0 var(--clay);
+    }
+    .video-note { margin: 22px 0 0; color: var(--muted); font-size: 13px; }
+
+    .limits-list { margin: 42px 0 0; padding: 0; border-bottom: 1px solid var(--line); list-style: none; }
+    .limits-list li { padding: 18px 0 20px; border-top: 1px solid var(--line); color: #3f3e39; }
+    .limits-list strong { color: var(--ink); }
+
+    .validation { padding-block: 116px 124px; }
+    .validation-inner { max-width: 900px; }
+    .validation h2 {
+      margin: 18px 0 0;
+      font-size: clamp(50px, 6.8vw, 88px);
+      line-height: .98;
+      letter-spacing: -.05em;
+      text-wrap: balance;
+    }
+    .validation .lead { max-width: 720px; }
+    .request-box {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 36px;
+      align-items: center;
+      margin-top: 42px;
+      padding: 26px 0;
+      border-block: 1px solid var(--line);
+    }
+    .request-box p { margin: 0; color: var(--muted); }
+    .request-box strong { color: var(--ink); }
+    .privacy-note { margin: 18px 0 0; color: var(--muted); font-size: 13px; }
+
+    footer { border-top: 1px solid var(--line); }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      padding-block: 28px 40px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footer-inner p { margin: 0; }
+
+    @media (max-width: 880px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; gap: 82px; padding-block: 70px 86px; }
+      .screening-note { max-width: 580px; }
+      .section-grid, .inverse-grid, .video-intro { grid-template-columns: 1fr; gap: 34px; }
+      .section-grid, .inverse-grid { padding-block: 82px; }
+      .request-box { grid-template-columns: 1fr; gap: 22px; align-items: start; }
+      .request-box .button { width: fit-content; }
+    }
+
+    @media (max-width: 560px) {
+      .wrap { width: min(calc(100% - 32px), var(--max)); }
+      .nav { min-height: 68px; gap: 14px; }
+      .wordmark img { width: 146px; }
+      .status { font-size: 9px; letter-spacing: .06em; }
+      .hero { gap: 76px; padding-block: 56px 70px; }
+      h1 { font-size: clamp(41px, 12vw, 50px); line-height: 1; }
+      .hero-copy { margin-top: 24px; font-size: 18px; }
+      .actions { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+      .screening-note { padding: 22px 20px; border-radius: 9px; box-shadow: 8px 8px 0 var(--clay); }
+      .screening-note::before { top: -34px; left: 0; right: auto; font-size: 9px; }
+      .brief-top { flex-direction: column; gap: 3px; }
+      .screening-note h2 { font-size: 28px; }
+      .brief-row { grid-template-columns: 72px 1fr; gap: 10px; }
+      .section h2, .inverse h2, .video-intro h2 { font-size: clamp(38px, 10.5vw, 46px); line-height: 1.06; }
+      .lead { font-size: 17px; }
+      .profile-list { margin-top: 34px; }
+      .profile-list li { grid-template-columns: 1fr; gap: 5px; padding: 17px 0; }
+      .review-list li { grid-template-columns: 38px 1fr; gap: 8px; }
+      .video-story { padding-block: 76px 82px; }
+      .video-intro { margin-bottom: 30px; }
+      .video-shell video { border-radius: 6px; box-shadow: 8px 8px 0 var(--clay); }
+      .validation { padding-block: 84px 90px; }
+      .validation h2 { font-size: clamp(41px, 11.5vw, 50px); line-height: 1.04; }
+      .request-box .button { width: 100%; }
+      .footer-inner { flex-direction: column; }
+    }
+
+    @media (max-width: 340px) {
+      .wrap { width: calc(100% - 28px); }
+      .wordmark img { width: 132px; }
+      .status { max-width: 88px; line-height: 1.25; }
+      .brief-row { grid-template-columns: 1fr; gap: 4px; }
+      .review-list { margin-top: 34px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: 0.01ms !important; }
+    }
+
+.nav { flex-wrap: wrap; padding-block: 12px; } .languages { display:flex; flex-wrap:wrap; gap:4px 14px; font-size:13px; } .languages a { display:inline-flex; min-height:44px; align-items:center; text-underline-offset:4px; } .languages [aria-current=page] { font-weight:700; color:var(--clay-dark); } @media(max-width:560px) { .languages { width:100%; justify-content:flex-end; } }
+</style>
+<script defer="" src="../assets/analytics.js"></script>
+<link href="https://orynavo.com/photonbid/" hreflang="en" rel="alternate"/><link href="https://orynavo.com/photonbid/fr/" hreflang="fr" rel="alternate"/><link href="https://orynavo.com/photonbid/de/" hreflang="de" rel="alternate"/><link href="https://orynavo.com/photonbid/" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#main">Zum Inhalt springen</a>
+<header>
+<div class="wrap nav">
+<div class="wordmark"><img alt="PhotonBid" src="../assets/photonbid-logo.svg"/></div>
+<div class="status">Frühe Validierungsphase</div>
+<nav aria-label="Sprache" class="languages"><a href="/photonbid/" hreflang="en" lang="en">English</a><a href="/photonbid/fr/" hreflang="fr" lang="fr">Français</a><a aria-current="page" href="/photonbid/de/" hreflang="de" lang="de">Deutsch</a></nav></div>
+</header>
+<main id="main">
+<section aria-labelledby="hero-title" class="wrap hero">
+<div>
+<p class="eyebrow">Chancenprüfung für spezialisierte Anbieter</p>
+<h1 id="hero-title">Finden Sie öffentliche Ausschreibungen, deren Anforderungen Ihr Unternehmen tatsächlich erfüllen kann.</h1>
+<p class="hero-copy">PhotonBid reduziert irrelevante Ausschreibungstreffer, indem es aktuelle öffentliche Aufträge mit dem abgleicht, was Ihr Unternehmen verkaufen, betreuen und liefern kann.</p>
+<p class="hero-note">Es erläutert Quellenbelege, die voraussichtliche Katalogpassung, wichtige offene Fragen und Ausschlusskriterien. Ihr Team entscheidet, ob es ein Angebot abgibt.</p>
+<div class="actions">
+<a class="button" data-photonbid-event="sample_request_click" href="mailto:research@orynavo.com?subject=PhotonBid%3A%20Beispielabgleich&amp;body=Unternehmen%3A%0AWebsite%20oder%20Katalog%3A%0AWas%20wir%20verkaufen%3A%0AZielm%C3%A4rkte%3A%0AServiceabdeckung%3A%0AWas%20einen%20Auftrag%20f%C3%BCr%20uns%20ausschlie%C3%9Ft%3A%0A">Beispielabgleich anfordern</a>
+<a class="text-link" data-photonbid-event="profile_section_click" href="#profile">Was PhotonBid berücksichtigt</a>
+</div>
+</div>
+<aside aria-labelledby="brief-title" class="screening-note">
+<div class="brief-top"><span>Prüfübersicht</span><span class="priority">Vorrangig prüfen</span></div>
+<h2 id="brief-title">Spektroskopiesystem für ein Universitätslabor</h2>
+<dl>
+<div class="brief-row"><dt>Belege</dt><dd>Die Bekanntmachung nennt Wellenlängen- und Auflösungsbereiche, die im Katalog des Anbieters enthalten sind.</dd></div>
+<div class="brief-row"><dt>Voraussichtliche Passung</dt><dd>Eine Produktfamilie erscheint geeignet, vorbehaltlich einer Prüfung der Konfiguration.</dd></div>
+<div class="brief-row"><dt>Offene Frage</dt><dd>Die Abdeckung der Installation vor Ort ist unklar.</dd></div>
+<div class="brief-row"><dt>Ausschlusskriterium</dt><dd>Eine erforderliche Zertifizierung ist möglicherweise nicht durch das Anbieterprofil abgedeckt.</dd></div>
+</dl>
+<span class="source-chip">Offizielle Quelle öffnen</span>
+</aside>
+</section>
+<section aria-labelledby="profile-title" class="section" id="profile">
+<div class="wrap section-grid">
+<p class="section-label">Ihr Anbieterprofil</p>
+<div>
+<h2 id="profile-title">Ein Stichwort sagt nicht, ob Sie ein Angebot abgeben sollten.</h2>
+<p class="lead">PhotonBid berücksichtigt die geschäftlichen und operativen Rahmenbedingungen einer tatsächlichen Angebotsentscheidung statt einer losen Liste von Suchbegriffen.</p>
+<ul class="profile-list">
+<li><strong>Was Sie verkaufen</strong><span>Produktfamilien, Katalogspezifikationen, unterstützte Konfigurationen und zugehörige Dienstleistungen.</span></li>
+<li><strong>Wo Sie anbieten</strong><span>Zielmärkte, Auftraggebertypen, Regionen und Vertriebsgebiete.</span></li>
+<li><strong>Was Sie leisten können</strong><span>Grenzen des Auftragsvolumens, Serviceabdeckung, Installationskapazität und erforderliche Zertifizierungen.</span></li>
+<li><strong>Wann Sie kein Angebot abgeben</strong><span>Ausschlussregeln wie ausgeschlossene Branchen, nicht erfüllbare Pflichten, ungeeignete Vertragsbedingungen oder fehlende Partnerabdeckung.</span></li>
+</ul>
+</div>
+</div>
+</section>
+<section aria-labelledby="review-title" class="inverse">
+<div class="wrap inverse-grid">
+<p class="section-label">Eine Prüfübersicht statt noch einer Benachrichtigung</p>
+<div>
+<h2 id="review-title">Erkennen Sie den Prüfbedarf, bevor Sie die Vergabeunterlagen öffnen.</h2>
+<p class="lead">PhotonBid gleicht aktuelle öffentliche Ausschreibungen mit dem Anbieterprofil ab und liefert Ihrem Team eine kurze, nachvollziehbare Erstprüfung.</p>
+<ol class="review-list">
+<li><div><h3>Quellenbelege</h3><p>Zitierte Anforderungen mit einem Link zur offiziellen Bekanntmachung oder zum Dokument.</p></div></li>
+<li><div><h3>Voraussichtliche Katalogpassung</h3><p>Die anscheinend passende Produktfamilie oder Dienstleistung mit offengelegter Begründung.</p></div></li>
+<li><div><h3>Offene Fragen und Ausschlusskriterien</h3><p>Fehlende Informationen, Zweifel an der Teilnahmeberechtigung und Anforderungen, die den Auftrag ausschließen könnten.</p></div></li>
+<li><div><h3>Prüfpriorität</h3><p>Eine praktische Einordnung, welche Aufträge zuerst von Menschen geprüft werden sollten.</p></div></li>
+</ol>
+<p class="score-note"><strong>Ein Konfidenzwert dient der Vorsortierung.</strong> Er hilft, die Prüfreihenfolge festzulegen. Er ist weder ein wörtlicher Prozentsatz der Übereinstimmung noch eine Garantie der Teilnahmeberechtigung oder eine Prognose für den Zuschlag.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="video-title" class="video-story">
+<div class="wrap video-intro">
+<p class="section-label">Überblick in einer Minute</p>
+<div>
+<h2 id="video-title">Von einer allgemeinen Meldung zur begründeten Prüfung.</h2>
+<p class="lead">Dieses illustrative Beispiel begleitet einen spezialisierten Anbieter von den Profildaten bis zur E-Mail mit Quellenlink. PhotonBid befindet sich noch in einer frühen Validierungsphase.</p>
+</div>
+</div>
+<div class="wrap video-shell">
+<video aria-label="PhotonBid: Erklärung der Chancenprüfung" controls="" playsinline="" poster="../assets/photonbid-explainer-poster.png" preload="metadata">
+<source src="../assets/photonbid-explainer.mp4" type="video/mp4"/><track kind="captions" label="English" src="../assets/photonbid-explainer.en.vtt" srclang="en"/><track kind="subtitles" label="Français" src="../assets/photonbid-explainer.fr.vtt" srclang="fr"/><track default="" kind="subtitles" label="Deutsch" src="../assets/photonbid-explainer.de.vtt" srclang="de"/>
+
+          Ihr Browser unterstützt dieses Video nicht. Sie können <a data-photonbid-event="video_link_click" href="assets/photonbid-explainer.mp4">die PhotonBid-Erklärung direkt öffnen</a>.
+        </video>
+<p class="video-note">Das Video wird auf dieser Website gehostet. Es startet nicht automatisch, lädt keinen externen Player und verwendet kein Tracking durch Dritte. Wir zählen Videostarts und vollständige Wiedergaben als Tagessummen nach Seitensprache. Die Originalstimme ist Englisch; englische Untertitel sowie französische und deutsche Übersetzungen sind im Player verfügbar.</p>
+</div>
+</section>
+<section aria-labelledby="limits-title" class="section">
+<div class="wrap section-grid">
+<p class="section-label">Grenzen der Entscheidungshilfe</p>
+<div>
+<h2 id="limits-title">Ihr Team entscheidet, ob es ein Angebot abgibt oder nicht.</h2>
+<p class="lead">PhotonBid soll Menschen helfen zu entscheiden, welche Aufträge sie näher prüfen. Es ersetzt keine kaufmännische, technische oder vergabefachliche Beurteilung.</p>
+<ul class="limits-list">
+<li><strong>Die offizielle Bekanntmachung hat stets Vorrang.</strong> Prüfen Sie die Quelle auf Leistungsumfang, Fristen, Auftragswert, Änderungen, Teilnahmeberechtigung und Einreichungsanforderungen.</li>
+<li><strong>Abdeckung und Erkennung sind nicht garantiert.</strong> Öffentliche Quellen können sich ändern, Dokumente können unvollständig sein und relevante Aufträge können übersehen werden.</li>
+<li><strong>PhotonBid erstellt und übermittelt keine Angebote.</strong> Es bietet keine Rechts- oder Vergabeberatung und sagt keine Zuschläge voraus.</li>
+</ul>
+</div>
+</div>
+</section>
+<section aria-labelledby="validation-title" class="wrap validation">
+<div class="validation-inner">
+<p class="eyebrow">Frühe Validierungsphase</p>
+<h2 id="validation-title">So könnte PhotonBid Aufträge für Ihr Unternehmen vorprüfen.</h2>
+<p class="lead">Wir sprechen mit spezialisierten Anbietern und testen Beispielabgleiche anhand realer Anbieterprofile. Senden Sie einen Kataloglink und einige konkrete Rahmenbedingungen. Gemeinsam besprechen wir, ob eine Beispielprüfung sinnvoll ist.</p>
+<div class="request-box">
+<p><strong>Hilfreiche Angaben:</strong> Ihr Angebot, Zielmärkte, Serviceregionen, übliches Auftragsvolumen, Zertifizierungen, Vertriebsgebiete und Ihre wichtigsten Ausschlussregeln.</p>
+<a class="button" data-photonbid-event="profile_cta_click" href="mailto:research@orynavo.com?subject=PhotonBid%3A%20Anbieterprofil&amp;body=Unternehmen%3A%0AWebsite%20oder%20Katalog%3A%0AWas%20wir%20verkaufen%3A%0AZielm%C3%A4rkte%3A%0A%C3%9Cbliches%20Auftragsvolumen%3A%0AServiceabdeckung%3A%0AZertifizierungen%3A%0AVertriebsgebiete%3A%0AAusschlussregeln%3A%0A">Ihr Anbieterprofil besprechen</a>
+</div>
+<p class="privacy-note">Die Schaltfläche öffnet Ihr E-Mail-Programm. Diese Seite enthält kein Formular. Wir zählen ausgewählte Klicks als Tagessummen, nicht E-Mail-Inhalte oder gesendete Nachrichten.</p>
+</div>
+</section>
+</main>
+<section aria-labelledby="privacy-title" class="wrap" id="privacy"><h2 id="privacy-title">Datenschutz und Statistik</h2>
+<p>GitHub Pages hostet diese Website. GitHub kann übliche technische Protokolle verarbeiten, darunter Ihre IP-Adresse, Browserinformationen und den Zeitpunkt einer Anfrage, um den Dienst zu betreiben und abzusichern. Weitere Informationen finden Sie in der <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noreferrer">Datenschutzerklärung von GitHub (auf Englisch)</a>.</p>
+<p>Seit dem 17. Oktober 2026 senden die PhotonBid-Seiten festgelegte Ereignisnamen an Orynavos bestehenden Server unter <code>control.orynavo.com/photonbid/events</code>, getrennt von unserem privaten CRM. Wir speichern ausschließlich Summen pro UTC-Tag: Seitenaufrufe, ausgewählte Klicks zu Beispielen und Anbieterprofilen, Video-Link-Klicks, Videostarts und vollständige Wiedergaben. Die Seitensprache ist auf Englisch (en), Französisch (fr) oder Deutsch (de) begrenzt. Sie bezeichnet weder Browsersprache noch Nationalität oder Standort des Besuchers. Frühere Ereignisse sind Englisch zugeordnet. Auf diesen Seiten wird derzeit kein Ereignis für einen Berichtslink verwendet.</p>
+<p>Es werden keine Cookies, dauerhaften Besucherkennungen, Werbepixel oder externen Videoplayer eingesetzt. Unser Collector speichert keine rohen IP-Adressen, User-Agent-Zeichenfolgen, Referrer, vollständigen URLs, Abfrageparameter, E-Mail-Inhalte oder Kontaktdaten. Die Anfrageprotokollierung ist für den Erfassungspfad deaktiviert. IP-Adressen durchlaufen zwangsläufig die Netzwerkinfrastruktur; dies bedeutet nicht, dass Hosting- oder Netzwerkanbieter keinerlei technische Daten verarbeiten. Die Hosting-Protokolle von GitHub sind davon getrennt.</p>
+<p>Tagessummen werden 90 UTC-Kalendertage aufbewahrt und automatisch täglich gelöscht. Es gibt keine Sicherungskopien der Statistikdatenbank. Bei aktiviertem Do Not Track oder Global Privacy Control werden keine Ereignisse gesendet. Skriptblocker oder Verbindungsabbrüche können die Zählung verhindern. Doppelte Ereignisse werden nur innerhalb des aktuell geöffneten Seitendokuments unterdrückt; ein Neuladen zählt erneut. Dies sind Ereigniszahlen, keine eindeutigen Besucher, Sitzungen, verifizierten Menschen, versandten Nachrichten, Interessenten oder Verkäufe. Die Bot-Erkennung ist heuristisch; der übrige Verkehr ist nicht verifiziert. Markierte Testereignisse werden getrennt gezählt und aus gewöhnlichen Aktivitätsberichten ausgeschlossen.</p>
+<p>Die Schaltflächen öffnen Ihr E-Mail-Programm; diese Seite enthält kein Formular. Wenn Sie an <a href="mailto:research@orynavo.com">research@orynavo.com</a> oder <a href="mailto:hello@orynavo.com">hello@orynavo.com</a> schreiben, erhält Orynavo die von Ihnen übermittelten Informationen, gegebenenfalls Name, Kontaktdaten, Funktion, Organisation und Nachricht. Wir verwenden sie zur Beantwortung, für das von Ihnen gewünschte Gespräch, für notwendige Nachverfolgung oder zur Erfüllung rechtlicher Pflichten. Sie werden nicht verkauft und nur so lange aufbewahrt, wie es für diese Zwecke vernünftigerweise erforderlich ist.</p>
+<p>Externe Websites haben eigene Datenschutzregeln. Orynavo aktualisiert diesen Hinweis, wenn sich die erfassten Daten oder verwendeten Dienste ändern. Stand: 17. Oktober 2026.</p>
+</section><footer>
+<div class="wrap footer-inner">
+<p>PhotonBid von Orynavo. Frühe Validierungsphase.</p>
+<p>Eigene aggregierte Statistik nach Seitensprache; keine Cookies oder Besucherkennungen. <a href="#privacy">Datenschutzhinweise</a>.</p>
+</div>
+</footer>
+</body>
+</html>
