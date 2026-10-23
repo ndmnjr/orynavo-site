@@ -24,8 +24,10 @@ REQUIRED = {
     "photonbid/assets/photonbid-explainer.mp4",
     "photonbid/assets/photonbid-explainer-poster.png",
     "photonbid/assets/photonbid-explainer.en.vtt",
+    "retentionos/index.html",
+    "retentionos/assets/analytics.js",
 }
-PUBLIC_HTML = ("index.html", "privacy.html", "404.html", "photonbid/index.html")
+PUBLIC_HTML = ("index.html", "privacy.html", "404.html", "photonbid/index.html", "retentionos/index.html")
 HTML_FILES = [ROOT / name for name in PUBLIC_HTML]
 FAVICON_SIZES = {(16, 16), (32, 32), (48, 48), (64, 64)}
 SIGNATURE_SIZE = (320, 80)
@@ -193,7 +195,7 @@ def main() -> int:
         check(parser.favicons == expected_icons, f"{page_name}: ICO, SVG, and Apple touch icons", failures)
         check(parser.h1s == 1, f"{page_name}: exactly one h1", failures)
         check(parser.mains == 1, f"{page_name}: main landmark", failures)
-        if page_name == "photonbid/index.html":
+        if page_name == "retentionos/index.html":
             check(parser.navs == 0, f"{page_name}: no empty navigation landmark", failures)
         else:
             check(parser.navs >= 1, f"{page_name}: navigation landmark", failures)
@@ -271,6 +273,27 @@ def main() -> int:
     check('kind="captions"' in photonbid and 'srclang="en"' in photonbid, "photonbid/index.html: English captions present", failures)
     check("youtube" not in photonbid and "vimeo" not in photonbid, "photonbid/index.html: no third party video host", failures)
     check((ROOT / "photonbid/assets/photonbid-explainer.mp4").stat().st_size > 1_000_000, "PhotonBid explainer has a nontrivial media payload", failures)
+
+    retention = contents[ROOT / "retentionos/index.html"].lower()
+    for phrase in (
+        "retention workflow for whop businesses",
+        "recover failed renewals without losing control of the message",
+        "pre-launch workflow", "failed renewals", "payments that require member action",
+        "detect, decide, deliver, measure", "verify the signed webhook",
+        "merchant-approved recovery automation", "not represented as live",
+        "does not promise that every failed payment can be recovered",
+        "design partner research", "research, not a sales commitment",
+        "not claiming a whop partnership or approved app store listing",
+    ):
+        check(phrase in retention, f"retentionos/index.html: required message present ({phrase})", failures)
+    check("mailto:research@orynavo.com" in retention, "retentionos/index.html: approved research mailbox is published", failures)
+    check("<form" not in retention, "retentionos/index.html: no form collection", failures)
+    check("data-retention-event" in retention, "retentionos/index.html: first-party aggregate event hooks present", failures)
+    for forbidden_claim in (
+        "our customers", "recovered millions", "guaranteed recovery", "official whop partner",
+        "approved by whop", "live integration", "production ready",
+    ):
+        check(forbidden_claim not in retention, f"retentionos/index.html: prohibited claim absent ({forbidden_claim})", failures)
 
     check((ROOT / "CNAME").read_text(encoding="utf-8").strip() == "orynavo.com", "CNAME: canonical domain is orynavo.com", failures)
     check("https://orynavo.com/" in index, "index.html: canonical Orynavo domain is present", failures)
