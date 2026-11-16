@@ -1,64 +1,78 @@
 WEBVTT
 
-00:00:00.600 --> 00:00:02.436
-Un cliente pregunta algo simple:
+00:00:00.250 --> 00:00:01.470
+«¿En qué posición estoy?»
 
-00:00:02.436 --> 00:00:05.058
-¿en qué posición estoy en Google Maps?
+00:00:01.490 --> 00:00:03.351
+Todo cliente local lo pregunta.
 
-00:00:05.058 --> 00:00:07.342
-Tú respondes: el número tres.
+00:00:03.371 --> 00:00:05.687
+Lo compruebas y
+sale el número uno.
 
-00:00:07.342 --> 00:00:09.084
-Suena bien, hasta que ves que solo
+00:00:05.707 --> 00:00:07.267
+Pero eso es una sola calle.
 
-00:00:09.084 --> 00:00:10.745
-es cierto en un punto.
+00:00:07.287 --> 00:00:08.207
+A dos kilómetros,
 
-00:00:10.745 --> 00:00:13.851
-MarkerRank divide el mapa en una cuadrícula.
+00:00:08.227 --> 00:00:10.058
+nadie encuentra el negocio.
 
-00:00:13.851 --> 00:00:17.954
-Siete por siete son 49 puntos alrededor del negocio.
+00:00:10.158 --> 00:00:11.538
+Un solo número no lo muestra.
 
-00:00:17.954 --> 00:00:20.170
-Comprueba la posición en cada punto y
+00:00:11.558 --> 00:00:14.253
+MarkerRank te enseña
+el mapa entero.
 
-00:00:20.170 --> 00:00:22.140
-el mapa de calor se va llenando:
+00:00:14.273 --> 00:00:15.811
+Busca el negocio.
 
-00:00:22.140 --> 00:00:23.569
-verde cerca del negocio,
+00:00:18.023 --> 00:00:20.263
+Elige una palabra
+clave y una cuadrícula,
 
-00:00:23.569 --> 00:00:25.052
-naranja más lejos.
+00:00:20.283 --> 00:00:21.734
+y lanza el escaneo.
 
-00:00:25.052 --> 00:00:27.914
-Ahora ves exactamente qué manzanas están perdiendo
+00:00:24.373 --> 00:00:26.033
+Cada punto se comprueba y el mapa
 
-00:00:27.914 --> 00:00:31.325
-clientes, porque la posición cambia calle por calle.
+00:00:26.053 --> 00:00:27.233
+de calor se va llenando.
 
-00:00:31.325 --> 00:00:33.167
-Con un clic se crea un informe
+00:00:27.253 --> 00:00:28.873
+Verde cerca del negocio,
 
-00:00:33.167 --> 00:00:34.379
-PDF de marca blanca,
+00:00:28.893 --> 00:00:30.346
+rojo más lejos.
 
-00:00:34.379 --> 00:00:36.428
-en el idioma de tu cliente.
+00:00:30.366 --> 00:00:32.757
+Ahora ves qué calles
+pierden clientes.
 
-00:00:36.428 --> 00:00:38.606
-El precio es una cuota mensual fija
+00:00:32.866 --> 00:00:33.486
+Con un clic,
 
-00:00:38.606 --> 00:00:40.524
-y ningún crédito caduca.
+00:00:33.506 --> 00:00:35.206
+un PDF de marca blanca en el
 
-00:00:40.524 --> 00:00:43.264
-MarkerRank abre una lista de espera antes
+00:00:35.226 --> 00:00:36.728
+idioma de tu cliente.
 
-00:00:43.264 --> 00:00:45.613
-del lanzamiento, y hoy no se cobra
+00:00:36.748 --> 00:00:39.118
+O envía un enlace para compartir.
 
-00:00:45.613 --> 00:00:48.186
-nada. Apúntate en orynavo.com/markerrank.
+00:00:39.748 --> 00:00:41.008
+Un precio mensual fijo,
+
+00:00:41.028 --> 00:00:43.865
+desde 29 €. Alojado en la UE.
+
+00:00:43.885 --> 00:00:45.985
+Empieza tu prueba
+gratuita de 14 días.
+
+00:00:46.005 --> 00:00:47.446
+Sin tarjeta.
