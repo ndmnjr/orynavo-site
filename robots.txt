@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://orynavo.com/sitemap.xml
+Sitemap: https://orynavo.com/markerrank/sitemap.xml
 Sitemap: https://orynavo.com/photonbid/sitemap.xml
