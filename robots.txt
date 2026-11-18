@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /markerrank/r/
 
 Sitemap: https://orynavo.com/sitemap.xml
 Sitemap: https://orynavo.com/markerrank/sitemap.xml
