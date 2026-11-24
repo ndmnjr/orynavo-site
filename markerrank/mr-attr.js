@@ -1,5 +1,5 @@
-/* Orynavo landing: campaign attribution carry-over, STORAGE-FREE. Nothing is written to the visitor's device: no cookie, no localStorage,
-   no sessionStorage, no third party, no personal data, no network request.
+/* Orynavo landing: campaign attribution carry-over, STORAGE-FREE. Nothing is written to the visitor's device: no cookie, no web storage of any kind,
+   no third party, no personal data, no network request.
    Reads utm_source/utm_medium/utm_campaign/utm_content/utm_term/ref and gclid from the URL of THIS page view (falls back to the referrer HOST,
    e.g. youtube.com, or to a seed set by a guide page: window.mrAttrSeed) and adds them as src/med/camp/cont/gclid/ref to every link to
    markerrank.orynavo.com (the app is another origin: URL parameters carry it; the app also accepts the utm_* names).
