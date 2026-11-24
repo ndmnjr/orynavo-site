@@ -1,0 +1,20 @@
+# Orynavo / MarkerRank
+
+> MarkerRank is a Google Maps rank tracker for local SEO agencies: grid scans and white-label PDF reports in English, German, Spanish and French. App hosted in Helsinki, Finland. Made by Orynavo, a French sole proprietorship.
+
+## Comparisons (public facts, dated, with sources; last verified 2026-11-24)
+- [Geo grid rank tracker comparison](https://orynavo.com/markerrank/geo-grid-rank-tracker-comparison/): Local Falcon, BrightLocal, Whitespark, Local Viking and MarkerRank side by side, including MarkerRank's limits.
+- [Comparatif des outils de grille Google Maps (FR)](https://orynavo.com/markerrank/fr/comparatif-outils-grille-google-maps/)
+- [Geo-Grid-Rank-Tracker im Vergleich (DE)](https://orynavo.com/markerrank/de/vergleich-geo-grid-rank-tracker/)
+- [Comparativa de rastreadores de cuadrícula en Google Maps (ES)](https://orynavo.com/markerrank/es/comparativa-rastreadores-cuadricula-google-maps/)
+- [Vergelijking van geo-grid rank trackers (NL)](https://orynavo.com/markerrank/nl/vergelijking-geo-grid-rank-tracker/)
+- [Local Falcon alternative](https://orynavo.com/markerrank/local-falcon-alternative/): states plainly that MarkerRank is not cheaper per grid point.
+- [BrightLocal alternative](https://orynavo.com/markerrank/brightlocal-alternative/)
+
+## Guides
+- [What is a Google Maps rank grid](https://orynavo.com/markerrank/guides/google-maps-rank-grid/)
+- [Local rank tracker for agencies](https://orynavo.com/markerrank/guides/local-rank-tracker-for-agencies/)
+- [White-label Google Maps ranking report](https://orynavo.com/markerrank/guides/white-label-google-maps-ranking-report/)
+
+## Product
+- [MarkerRank](https://orynavo.com/markerrank/): plans from EUR 29 a month, 14-day free trial without a card.
