@@ -1,0 +1,8 @@
+city,country,query_language,businesses_scanned,businesses_analysed,dentist_listings_found_in_discovery,median_top3_share_pct,mean_top3_share_pct,median_top10_share_pct,median_not_in_top20_share_pct,pct_top3_at_own_location,pct_top3_at_own_location_and_not_in_top20_at_all_24_points_1500m,pct_top3_at_own_location_and_not_in_top20_at_all_8_neighbours_500m,pct_top3_at_own_location_and_no_top3_at_any_of_8_neighbours_500m,pct_top3_at_own_location_and_not_in_top20_at_all_16_points_1km,n_top3_at_own_location,pct_top3_in_at_least_half_of_grid,pct_top3_in_at_least_80pct_of_grid,pct_top3_at_every_point,pct_never_in_top20_anywhere_incl_centre,mean_km_from_own_address_to_nearest_grid_point_outside_top20,mean_visibility_radius_km
+Paris,FR,fr,45,45,432,2.0,4.3,6.1,85.7,75.6,100.0,14.7,64.7,29.4,34,0.0,0.0,0.0,0.0,0.64,0.27
+Lyon,FR,fr,45,45,261,2.0,7.4,16.3,71.4,62.2,17.9,0.0,28.6,14.3,28,0.0,0.0,0.0,0.0,0.73,0.39
+Amsterdam,NL,nl,45,45,221,2.0,4.8,16.3,71.4,68.9,100.0,0.0,51.6,0.0,31,0.0,0.0,0.0,2.2,0.87,0.47
+Manchester,UK,en,45,45,125,18.4,17.7,30.6,69.4,80.0,100.0,0.0,8.3,0.0,36,0.0,0.0,0.0,4.4,0.93,0.48
+Munich,DE,de,45,45,343,2.0,7.8,20.4,65.3,75.6,8.8,2.9,35.3,5.9,34,0.0,0.0,0.0,0.0,0.79,0.4
+Madrid,ES,es,45,45,403,2.0,2.5,6.1,83.7,93.3,45.2,7.1,81.0,33.3,42,0.0,0.0,0.0,0.0,0.62,0.29
+ALL (6 cities pooled),,,270,270,1785,2.0,7.4,14.3,73.5,75.9,62.4,4.4,46.3,14.6,205,0.0,0.0,0.0,1.1,0.76,0.38
