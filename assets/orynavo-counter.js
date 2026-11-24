@@ -7,8 +7,8 @@
   const path = location.pathname.replace(/index\.html$/, '').replace(/^\/+|\/+$/g, '').toLowerCase();
   if (!/^[a-z0-9][a-z0-9\/-]{0,78}[a-z0-9]$/.test(path)) return;
   const parts = path.split('/');
-  const counted = (parts[0] === 'photonbid' && ['tenders', 'plans', 'sample-alert', 'open-tenders'].includes(parts[1])) ||
-                  (parts[0] === 'labwatch' && (parts.length === 1 || ['de', 'fr', 'sample-alert', 'open-tenders'].includes(parts[1])) && !['terms', 'refund'].includes(parts[parts.length - 1]));
+  const counted = (parts[0] === 'photonbid' && ['tenders', 'plans', 'sample-alert', 'open-tenders', 'products', 'guides', 'data'].includes(parts[1])) ||
+                  (parts[0] === 'labwatch' && (parts.length === 1 || ['de', 'fr', 'sample-alert', 'open-tenders', 'tenders'].includes(parts[1])) && !['terms', 'refund'].includes(parts[parts.length - 1]));
   if (!counted) return;
   let tag = '';
   const q = new URLSearchParams(location.search);
