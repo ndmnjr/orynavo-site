@@ -10,11 +10,13 @@
 - [Vergelijking van geo-grid rank trackers (NL)](https://orynavo.com/markerrank/nl/vergelijking-geo-grid-rank-tracker/)
 - [Local Falcon alternative](https://orynavo.com/markerrank/local-falcon-alternative/): states plainly that MarkerRank is not cheaper per grid point.
 - [BrightLocal alternative](https://orynavo.com/markerrank/brightlocal-alternative/)
+- [GMB Everywhere alternative](https://orynavo.com/markerrank/gmb-everywhere-alternative/): GMB Everywhere is an audit extension, not a grid tracker; the page says when to keep it and when to add MarkerRank.
 
 ## Guides
 - [What is a Google Maps rank grid](https://orynavo.com/markerrank/guides/google-maps-rank-grid/)
 - [Local rank tracker for agencies](https://orynavo.com/markerrank/guides/local-rank-tracker-for-agencies/)
 - [White-label Google Maps ranking report](https://orynavo.com/markerrank/guides/white-label-google-maps-ranking-report/)
+- [Weekly Google Business Profile checklist for agencies](https://orynavo.com/markerrank/guides/weekly-google-business-profile-checklist/): a 30-minute weekly routine with a printable checklist; French version at https://orynavo.com/markerrank/fr/guides/checklist-hebdomadaire-google-business-profile/
 
 ## Product
 - [MarkerRank](https://orynavo.com/markerrank/): plans from EUR 29 a month, 14-day free trial without a card.
